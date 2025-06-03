@@ -1,0 +1,1017 @@
+// Lec 1 - Introduction to PHP
+
+<?php
+    echo"I like Pizza <br>";
+    echo"It's really good"; 
+    // This is a comment
+    /* This is a multi-line comment
+       It can span multiple lines
+       and is useful for longer explanations */
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <button>Order a pizza</button>
+</body>
+</html>
+
+
+
+// Lec 2 - Variables and Data Types
+
+<?php
+    // variable = a reusable container that holds data 
+    // like string, integer, array, float, boolean, etc.
+
+    $name = "Aman Singh"; // string
+    $food = "Pizza";
+    $email = "fake123@gmail.com";
+
+    echo $name;
+    echo "<br>";
+    echo "Hello {$name} <br>";
+    echo "You like {$food} <br>";
+    echo "Your email is {$email} <br><br>";
+
+    $age = 30; // integer
+    $users = 2;
+    $quantity = 3;
+
+    echo "You are {$age} years old <br>";
+    echo "There are {$users} users online<br>";
+    echo "You would like to buy {$quantity} items<br><br>";
+
+    $gpa = 2.5; // float
+    $price = 19.99;
+    $tax_rate = 5.1;
+
+    echo "Your GPA is {$gpa} <br>";
+    echo "Your pizza costs \${$price} <br>";
+    echo "The sales tax rate is {$tax_rate}% <br><br>";
+
+    $employee = true; // boolean
+    $is_online = false;
+    $for_sale = true;
+
+    echo "You are an employee: {$employee} <br>";
+    echo "Online Status: {$is_online} <br>";
+    echo "This item is for sale: {$for_sale} <br><br>";
+
+    $total = null; // null
+
+    echo "You  have ordered {$quantity} {$food} for \${$price} each <br>";
+
+    $total = $quantity * $price;
+    echo "Your total is: \${$total} <br>";
+    echo "Thank you for your order! <br>";
+?>
+
+
+
+// Lec 3 - Arithmetic
+
+<?php
+    // Arithmetic Operators
+    // + - * / ** %
+
+    // Increment and Decrement Operators
+    // ++ --
+
+    // Operator Precedence
+    // () 
+    // **
+    // * / %
+    // + -
+
+    $x = 10;
+    $y = 2;
+    $z = null;
+
+    $z = $x + $y; // Addition
+    echo "Addition: $z<br>";
+
+    $z = $x - $y; // Subtraction
+    echo "Subtraction: $z<br>";
+
+    $z = $x * $y; // Multiplication
+    echo "Multiplication: $z<br>";
+
+    $z = $x / $y; // Division
+    echo "Division: $z<br>";
+
+    $z = $x ** $y; // Exponentiation
+    echo "Exponentiation: $z<br>";
+
+    $z = $x % $y; // Modulus
+    echo "Modulus(Remainder): $z<br><br>";
+
+    $counter = 10;
+
+    $counter++; // Increment
+    echo "Counter after increment: $counter<br>";
+    $counter--; // Decrement
+    echo "Counter after decrement: $counter<br>";
+    $counter += 5; // Increment by 5
+    echo "Counter after incrementing by 5: $counter<br>";
+    $counter -= 3; // Decrement by 3
+    echo "Counter after decrementing by 3: $counter<br><br>";
+
+    // Operator Precedence
+    $total = 1+2-3*4/5**6;
+    echo "Total with operator precedence: $total<br>";
+?>
+
+
+
+// Lec 4 - $_GET and $_POST
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="index.php" method="get"> -->
+    <!-- <form action="index.php" method="post">
+        <label for="name">Username:</label><br>
+        <input type="text" name="username" id=""><br>
+        <label for="name">Password:</label><br>
+        <input type="password" name="Password" id=""><br>
+        <input type="submit" value="Log in"><br>
+    </form> -->
+
+    <form action="index.php" method="post">
+        <label>quantity:</label><br>
+        <input type="text" name="quantity"><br>
+        <input type="submit" value="total"><br>
+    </form>
+</body>
+</html>
+
+<?php
+    // $_GET, $_POST = special variables used to collect data from an HTML form 
+    // data is sent to the file in the action attribute of <form> 
+    // <form action="some_file.php" method="get"> 
+    
+    //$_GET = Data is appended to the url 
+    //        NOT SECURE 
+    //        char limit 
+    //        Bookmark is possible w/ values
+    //        GET requests can be cached 
+    //        Better for a search page 
+    
+    //$_POST = Data is packaged inside the body of the HTTP request 
+    //         MORE SECURE 
+    //         No data limit 
+    //         Cannot bookmark 
+    //         GET requests are not cached 
+    //         Better for submitting credentials
+
+    // echo "{$_GET['username']}<br>";
+    // echo "{$_GET['Password']}<br>";
+
+    // echo "{$_POST['username']}<br>";
+    // echo "{$_POST['Password']}<br>";
+
+    $item = "pizza";
+    $price = 4.99;
+    $quantity = $_POST['quantity'];
+    $total = null;
+    
+    $total = $quantity * $price;
+
+    echo "You have ordered {$quantity} {$item}(s) at a price of {$price} each.<br>";
+    echo "Your total is: \${$total} <br>";
+?>
+
+
+
+// Lec 5 - Math Functions
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="index.php" method="post">
+        <label for="">x:</label>
+        <input type="text" name="x" id="x">
+        <label for="">y:</label>
+        <input type="text" name="y" id="y">
+        <label for="">z:</label>
+        <input type="text" name="z" id="z">
+        <input type="submit" name="" id="" value="total">
+    </form> -->
+
+    <form action="index.php" method="post">
+        <label for="">radius: </label>
+        <input type="text" name="radius" id="">
+        <input type="submit" name="" id="" value="Calculate">
+    </form>
+    <br>
+</body>
+</html>
+
+<?php
+    // $x = $_POST["x"];
+    // $y = $_POST["y"];
+    // $z = $_POST["z"];
+    // $total = null;
+
+    // $total = abs($x);
+    // $total = round($x);
+    // $total = floor($x);
+    // $total = ceil($x);
+    // $total = sqrt($x);
+    // $total = pow($x, $y);
+    // $total = max($x, $y, $z);
+    // $total = min($x, $y, $z);
+    // $total = pi();
+    // $total = rand();
+    // $total = rand(1, 6);
+
+    // echo $total;
+
+    $radius = $_POST["radius"];
+    $circumference = null;
+    $area = null;
+    $volume = null;
+
+    $circumference = 2 * pi() * $radius;
+    $circumference = round($circumference, 2);
+    $area = pi() * pow($radius, 2);
+    $area = round($area, 5);
+    $volume = (4/3) * pi() * pow($radius, 3);
+    $volume = round($volume, 4);
+    echo "The circumference of the circle with radius $radius is: $circumference <br>";
+    echo "The area of the circle with radius $radius is: $area";
+    echo "<br>The volume of the sphere with radius $radius is: $volume";
+?>
+
+
+
+// Lec 6 - If Statments
+
+<?php
+    // if statement = if some condition is true, do something
+    //                if confition is false, don't do it
+
+    // $age = 101;
+    // if($age <= 0) {
+    //     echo "That was't a valid age.";
+    // }
+    // else if($age >= 100) {
+    //     echo "You are too old to enter this site.";
+    // }
+    // else if ($age >= 18) {
+    //     echo "You are an adult.";
+    // }
+    // else {
+    //     echo "You are a minor.";
+    // }
+
+    // $adult = true;
+    // if($adult) {
+    //     echo "You are an adult.";
+    // }
+    // else {
+    //     echo "You are a minor.";
+    // }
+
+    $hours = 50;
+    $rate = 15;
+    $weekly_pay = null;
+
+    if($hours <= 0) {
+        $weekly_pay = 0;
+    }
+    else if($hours <= 40) {
+        $weekly_pay = $hours * $rate;
+    }
+    else {
+        $weekly_pay = (40 * $rate) + (($hours-40) * $rate*1.5);
+    }
+    
+    echo "Your weekly pay is: $" . $weekly_pay;
+?>
+
+
+
+// Lec 7 - Logical Opeartors
+
+<?php
+    // Logical Oparators = combine conditional statements
+    //                     if(condition1 && condition2)
+
+    // && = True if both conditions are true
+    // || = True if at least one condition is true
+    // ! = True if condition is false and False if condition is true
+
+    // $temp = 25;
+    // if($temp >= 0 && $temp <= 30) {
+    //     echo "The weather is Good.";
+    // } 
+    // else {
+    //     echo "The weather is bad.";
+    // }
+
+    // $temp = -5;
+    // if($temp < 0 || $temp > 30) {
+    //     echo "The weather is Bad.";
+    // } 
+    // else {
+    //     echo "The weather is Good.";
+    // }
+
+    // $temp = 25;
+    // $cloudy = true;
+    // if($temp >= 0 && $temp <= 30) {
+    //     echo "The weather is Good.<br>";
+    // } 
+    // else {
+    //     echo "The weather is bad.<br>";
+    // }
+    // if(!$cloudy) {
+    //     echo "The weather is Sunny.";
+    // } 
+    // else {
+    //     echo "The weather is Cloudy.";
+    // }
+
+    $age = 21;
+    $citizen = true;
+    if($age >= 18 && $citizen) { //$age < 18 || !$citizen
+        echo "You are eligible to vote.";
+    } 
+    else {
+        echo "You are not eligible to vote.";
+    }
+
+    $child = true;
+    $senior = true;
+    $ticket = null;
+
+    if($child || $senior) {
+        $ticket = 10;
+    }
+    else {
+        $ticket = 20;
+    }
+    echo "<br>Ticket Price: $ticket";
+?>
+
+
+
+// Lec 8 - Switch case
+
+<?php
+    // Switch = replacement for using many elseif statements
+    //          more efficient, cleaner, and less code to write
+
+    $grade = 'A';
+    switch ($grade) {
+        case 'A':
+            echo "You did great!";
+            break;
+        case 'B':
+            echo "You did good!";
+            break;
+        case 'C':
+            echo "You did okay!";
+            break;
+        case 'D':
+            echo "You did bad!";
+            break;
+        case 'F':
+            echo "You failed!";
+            break;
+        default:
+            echo "{$grade} is an Invalid grade!";
+    }
+    echo "<br><br>";    
+
+    $date = date('l');
+    switch ($date) {
+        case 'Monday':
+            echo "It's Monday!";
+            break;
+        case 'Tuesday':
+            echo "It's Tuesday!";
+            break;
+        case 'Wednesday':
+            echo "It's Wednesday!";
+            break;
+        case 'Thursday':
+            echo "It's Thursday!";
+            break;
+        case 'Friday':
+            echo "It's Friday!";
+            break;
+        case 'Saturday':
+            echo "It's Saturday!";
+            break;
+        case 'Sunday':
+            echo "It's Sunday!";
+            break;
+        default:
+            echo "{$date} is not a valid day of the week!";
+    }
+?>
+
+
+
+// Lec 9 - For Loops
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <label> Enter a number:</label>
+        <input type="text" name="counter" id="">
+        <input type="submit" name="" id="" vakue="start">
+    </form>
+</body>
+</html>
+
+<?php
+    // for loop = repeat some code a certain number of times
+
+    // for ($i = 0; $i < 10; $i++) {
+    //     echo "The number is: $i <br>";
+    // }
+
+    $counter = $_POST["counter"];
+
+    for ($i = 0; $i <= $counter; $i++) {
+        echo "The number is: $i <br>";
+    }
+    echo "<hr>";
+
+    for ($i = $counter; $i >= 0; $i--) {
+        echo "The number is: $i <br>";
+    }
+?>
+
+
+
+// Lec 10 - While Loops
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <!-- <label for="">Enter time:</label>
+        <input type="number" name="" id=""><br> -->
+        <input type="submit" value="Stop">
+    </form>
+</body>
+</html>
+
+<?php
+    // while loop = do some code infinitely while some 
+    //              condition remain true
+
+    // $counter = 0;
+    // while($counter <= 10) {
+    //     echo "Counter is: $counter <br>";
+    //     $counter++;
+    // }
+    // echo "Loop finished!";
+
+    $seconds = 0;
+    $running = true;
+    while($running) {
+        if(isset($_POST['stop'])) {
+            $running = false;
+        } 
+        else {
+            $seconds++;
+            echo $seconds . "<br>";
+        }
+    }
+?>
+
+
+
+// Lec 11 - array
+
+<?php
+    // Array = "variable" which can hold more than one value at a time
+
+    $foods = array("Pizza", "Burger", "Pasta", "Salad");
+    // $foods = ["Pizza", "Burger", "Pasta", "Salad"]; // Short array syntax
+    // echo $foods[0] . "<br>";
+    // echo $foods[1] . "<br>";
+    // echo $foods[2] . "<br>";
+    // echo $foods[3] . "<br>"; 
+    
+    // $foods[0] = "Sushi"; // Change the first element
+    // $foods[] = "Tacos"; // Add a new element to the end of the array
+    // array_push($foods, "Ice Cream", "streak"); // Add another element to the end of the array
+
+    // array_pop($foods); // Remove the last element from the array
+
+    // array_shift($foods); // Remove the first element from the array
+
+    // array_unshift($foods, "Fries", "Wings"); // Add elements to the beginning of the array
+
+    // $foods = array_reverse($foods); // Reverse the order of the array
+
+    // sort($foods); // Sort the array in ascending order
+
+    echo count($foods) . "<br>"; // Count the number of elements in the array
+
+    foreach($foods as $food) {
+        echo $food . "<br>";
+    }
+?>
+
+
+
+// Lec 12 - Associative Array
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <label for="">Enter a Country: </label>
+        <input type="text" name="country" id=""><br>
+        <input type="submit" name="" id="" value="Submit"><br>
+    </form>
+</body>
+</html>
+
+<?php
+    // Associative array = An array made of key => value pairs
+
+    // countries => capitals
+    // id => username
+    // item => price
+
+    $countries = array(
+        "India" => "New Delhi",
+        "USA" => "Washington, D.C.",
+        "Canada" => "Ottawa",
+        "Mexico" => "Mexico City",
+        "UK" => "London",
+        "France" => "Paris",
+        "Japan" => "Tokyo",
+    );
+
+    // Accessing values in an associative array
+    // echo "The capital of Canada is: " . $countries["Canada"] . "<br>";
+    // echo "The capital of France is: " . $countries["France"] . "<br>";
+
+    // $countries["Japan"] = "Kyoto";
+    // $countries["Germany"] = "Berlin"; // Adding a new country and its capital
+    // array_pop($countries); // Deleting a country
+    // array_shift($countries); // Deleting the first country
+    // unset($countries["Mexico"]); // Deleting Mexico
+    // $countries = array_keys($countries); // Get all keys (countries)
+    // $countries = array_values($countries); // Get all keys (countries)
+    // $countries = array_flip($countries); // Flip keys and values
+    // $countries = array_reverse($countries); // Reverse the order of the array
+    // $countries = array_slice($countries, 0, 3); // Get the first 3 countries
+    // $countries = array_map('strtoupper', $countries); // Convert all keys to uppercase
+    // $countries = array_merge($countries, array("Germany" => "Berlin")); // Merge with another array
+    
+    // $countries = array_filter($countries, function($capital) {
+    //     return strlen($capital) > 6; // Filter capitals with more than 6 characters
+    // });
+
+    // foreach ($countries as $country => $capital) {
+    //     echo "The capital of $country is: $capital <br>";
+    // }
+
+    $capital = $countries[$_POST["country"]];
+    // echo "The capital of " . $_POST["country"] . " is: " . $capital . "<br>";
+    // if ($capital) {
+    //     if (array_key_exists($capital, $countries)) {
+    //         echo "The capital of $capital is: " . $countries[$capital] . "<br>";
+    //     } else {
+    //         echo "Country not found in the list.<br>";
+    //     }
+    // }
+?>
+
+
+
+// Lec 13 - isset() and empty()
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <label for="">Username: </label>
+        <input type="text" name="username" id=""><br>
+        <label for="">Password: </label>
+        <input type="password" name="password" id=""><br>
+        <input type="submit" name="login" id="" value="Log in"><br>
+    </form>
+</body>
+</html>
+
+<?php
+    // isset() = returns TRUE if a variable is set and not NULL
+    // empty() = returns TRUE if a variable is not declared, false, null, ""
+   
+    // $username = $_POST['username'] ?? null;
+
+    // if(isset($username)) {
+    //     echo "Username is set.<br>";
+    // } else {
+    //     echo "Username is not set.<br>";
+    // }
+
+    // if(isset($age)) {
+    //     echo "Age is set.<br>";
+    // } else {
+    //     echo "Age is not set.<br>";
+    // }
+
+    // if(empty($username)) {
+    //     echo "username is empty.<br>";
+    // } else {
+    //     echo "username is not empty.<br>";
+    // }
+    // if(empty($age)) {
+    //     echo "Age is empty.<br>";
+    // } else {
+    //     echo "Age is not empty.<br>";
+    // }
+
+    // foreach($_POST as $key => $value) {
+    //     echo "$key: $value<br>";
+    // }
+
+    if(isset($_POST['login'])) {
+        $username = $_POST['username'] ?? '';
+        $password = $_POST['password'] ?? '';
+
+        if(empty($username)) {
+            echo "Please Enter the username.<br>";
+        } 
+        else if(empty($password)) {
+            echo "Please Enter the password.<br>";
+        } 
+        else {
+            echo "Username: $username<br>";
+            echo "Password: $password<br>";
+        }
+    }
+?>
+
+
+
+// Lec 14 - Radio Buttons
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <input type="radio" name="credit-card" id="" value="Visa">Visa<br>
+        <input type="radio" name="credit-card" id="" value="MaterCard">MasterCard<br>
+        <input type="radio" name="credit-card" id="" value="American Express">American Express<br>
+        <input type="submit" name="confirm" id="" value="confirm">
+    </form>
+</body>
+</html>
+
+<?php
+    $credit_card = $_POST['credit-card'] ?? '';
+    if (isset($_POST['confirm'])) {
+        if ($credit_card) {
+            echo "You have selected: " . htmlspecialchars($credit_card);
+        } else {
+            echo "Please select a credit card.";
+        }
+    }
+?>
+
+
+
+// Lec 15 - Checkboxes
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <!-- <input type="checkbox" name="pizza" id="" value="pizza">Pizza<br>
+        <input type="checkbox" name="burger" id="" value="burger">Burger<br>
+        <input type="checkbox" name="pasta" id="" value="pasta">Pasta<br>
+        <input type="checkbox" name="salad" id="" value="salad">Salad<br>
+        <input type="submit" name="submit" id="" value="Submit"><br> -->
+        <input type="checkbox" name="foods[]" id="" value="pizza">Pizza<br>
+        <input type="checkbox" name="foods[]" id="" value="burger">Burger<br>
+        <input type="checkbox" name="foods[]" id="" value="pasta">Pasta<br>
+        <input type="checkbox" name="foods[]" id="" value="salad">Salad<br>
+        <input type="submit" name="submit" id="" value="Submit"><br>
+    </form>
+</body>
+</html>
+
+<?php
+    // if(isset($_POST['submit'])) {
+    //     if(isset($_POST['pizza'])) {
+    //         echo "You have selected Pizza.<br>";
+    //     }
+    //     if(empty($_POST['pizza'])) {
+    //         echo "You have NOT selected Pizza.<br>";
+    //     }
+    //     if(isset($_POST['burger'])) {
+    //         echo "You have selected Burger.<br>";
+    //     }
+    //     if(empty($_POST['burger'])) {
+    //         echo "You have NOT selected Burger.<br>";
+    //     }
+    //     if(isset($_POST['pasta'])) {
+    //         echo "You have selected Pasta.<br>";
+    //     }
+    //     if(empty($_POST['pasta'])) {
+    //         echo "You have NOT selected Pasta.<br>";
+    //     }
+    //     if(isset($_POST['salad'])) {
+    //         echo "You have selected Salad.<br>";
+    //     }
+    //     if(empty($_POST['salad'])) {
+    //         echo "You have NOT selected Salad.<br>";
+    //     }
+    // } 
+    // else {
+    //     echo "Please select at least one option.";
+    // }
+
+    if(isset($_POST['submit'])) {
+        if(!empty($_POST['foods'])) {
+            foreach($_POST['foods'] as $food) {
+                echo "You have selected: " . $food . "<br>";
+            }
+        } else {
+            echo "Please select at least one food option.";
+        }
+    }
+?> 
+
+
+
+// Lec 16 - Functions
+
+<?php
+    // function = write some code once, reuse when you need it
+    //            type () after the function name to invoke
+    //            ex. add() subtract() multiply() divide()
+
+    // function happy_birthday($first_name, $age) {
+    //     echo "Happy Birthday to you!<br>";
+    //     echo "Happy Birthday to you!<br>";
+    //     echo "Happy Birthday dear $first_name!<br>";
+    //     echo "Happy Birthday to you!<br>";
+    //     echo "You are now $age years old!<br><br>";
+    // }
+
+    // happy_birthday("Aman", 21);
+    // happy_birthday("SpongeBob", 15);
+    // happy_birthday("John", 45);
+
+    // function is_even($num) {
+    //     return $num % 2;
+    // }
+
+    // echo is_even(4); echo "<br>";
+    // echo is_even(5); echo "<br>";
+
+    function hypotenuse(float $a, float $b) {
+        return sqrt($a * $a + $b * $b);
+    }
+
+    $c = hypotenuse(3, 4);
+    echo "The hypotenuse is $c.<br>";
+?>
+
+
+
+// Lec 17 - String Functions
+
+<?php
+    $username = " Aman Singh ";
+    $phone = " 123-456-7890 ";
+
+    // $username = strtolower($username);
+    // $username = strtoupper($username);
+    // $username = trim($username);
+    // $username = str_pad($username, 20, "/");
+    // $phone = str_replace("-", "/", $phone);
+    // $username = strrev($username);
+    // $username = str_shuffle($username);
+    // $username = strcmp($username, " Aman Singh "); // 0 when equal, < 0 when less, > 0 when greater
+    // $username = strlen($username);
+    // $username = stripos($username, "n");
+    // $username = substr($username, 2, 5);
+
+    // $username = "Aman The Singh";
+    // $username = explode(" ", $username);
+    // foreach ($username as $name) {
+    //     echo "{$name} <br>";
+    // }
+
+    $username = array("Aman", "The", "Singh"); $username = implode("-", $username);
+
+    echo "{$username} <br>";
+    echo "{$phone} <br>";
+?>
+
+
+
+// Lec 18 - Sanitize/Validate input
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <label for="">Username: </label><br>
+        <input type="text" name="username" id=""><br>
+        <label for="">Age: </label><br>
+        <input type="text" name="age" id=""><br>
+        <label for="">Email: </label><br>
+        <input type="text" name="email" id=""><br>
+        <input type="submit" name="login" id="" value="login"><br>
+    </form>
+</body>
+</html>
+
+<?php
+    // if(isset($_POST["login"])) {
+    //     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS); // INPUT_GET when get method is used
+    //     $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT); 
+    //     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+        
+    //     echo "Username: " . htmlspecialchars($username) . "<br>";
+    //     echo "You are $age years old" . "<br>";
+    //     echo "Your email is: " . $email . "<br>";
+    // }
+
+    if(isset($_POST['login'])) {
+        $age = filter_input(INPUT_POST, 'age', FILTER_VALIDATE_INT);
+        $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+
+        if(empty($age)) {
+            echo "Please enter a valid age.<br>";
+        } else {
+            echo "You are $age years old" . "<br>";
+        }
+        if(empty($email)) {
+            echo "Please enter a valid email.<br>";
+        } else {
+            echo "Your email is: " . $email . "<br>";
+        }
+    }
+?>
+
+
+
+// Lec 19 - Include()
+
+include('header.html');
+include('footer.html');
+
+
+
+// Lec 20 - _COOKIE
+
+<?php
+    // cookie = Information about a user stored in a user's web-browser
+    //          targeted advertisements, browsing preferences, and
+    //          other non-essential data
+
+    setcookie("fav_food", "pizza", time() + 86400, "/");
+    setcookie("fav_drink", "coffee", time() + 86400 * 2, "/");
+    setcookie("fav_desert", "icecream", time() + 86400 * 3, "/");
+
+    foreach ($_COOKIE as $key => $value) {
+        echo "{$key}: {$value} <br>";
+    }
+
+    if(isset($_COOKIE['fav_food'])) {
+        echo "Your favorite food is: " . $_COOKIE['fav_food'] . "<br>";
+    } else {
+        echo "Favorite food cookie is not set.<br>";
+    }
+?>
+
+
+
+// Lec 21 - _SESSION
+
+// index.php
+
+<?php
+    session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    This is the home page <br>
+    <form action="home.php" method="post">
+        <input type="submit" name="logout" id="" value="logout">
+    </form>
+</body>
+</html>
+
+<?php
+    echo $_SESSION['username'] . '<br>';
+    echo $_SESSION['password'] . '<br>';
+
+    if (isset($_POST['logout'])) {
+        session_destroy();
+        header("Location: index.php");
+    }
+?>
+
+// home.php
+
+<?php
+    session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    This is the home page <br>
+    <form action="home.php" method="post">
+        <input type="submit" name="logout" id="" value="logout">
+    </form>
+</body>
+</html>
+
+<?php
+    echo $_SESSION['username'] . '<br>';
+    echo $_SESSION['password'] . '<br>';
+
+    if (isset($_POST['logout'])) {
+        session_destroy();
+        header("Location: index.php");
+    }
+?>
+
+
+
+// Lec 22 - _SERVER
+
