@@ -1,2 +1,2 @@
 # TripOnTheGo
-Hotel Booking Website
+Hotel Booking Website.
