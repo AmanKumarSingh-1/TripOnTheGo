@@ -131,6 +131,11 @@
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> AC </span>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> Room heater </span>
                         </div>
+                        <div class="guests mb-4">
+                            <h6 class="mb-1">Guests</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> 5 Adults </span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> 4 Children </span>
+                        </div>
                         <div class="rating mb-4">
                             <h6 class="mb-1">Rating</h6>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base">
@@ -168,6 +173,11 @@
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> AC </span>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> Room heater </span>
                         </div>
+                        <div class="guests mb-4">
+                            <h6 class="mb-1">Guests</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> 4 Adults </span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> 3 Children </span>
+                        </div>
                         <div class="rating mb-4">
                             <h6 class="mb-1">Rating</h6>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base">
@@ -197,6 +207,11 @@
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> 2 Bathroom </span>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> 1 Balcony </span>
                             <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> 3 Sofa </span>
+                        </div>
+                        <div class="guests mb-4">
+                            <h6 class="mb-1">Guests</h6>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> 2 Adults </span>
+                            <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> 2 Children </span>
                         </div>
                         <div class="facilities mb-4">
                             <h6 class="mb-1">Facilities</h6>
