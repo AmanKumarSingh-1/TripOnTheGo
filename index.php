@@ -285,7 +285,7 @@
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
                         <img src="images/features/wifi.svg" width="30px" alt="">
-                        <h6 class="m-0 ms-2">Random user1</h6>
+                        <h6 class="m-0 ms-2">Random user2</h6>
                     </div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                         Adipisci minima possimus necessitatibus non fugiat nemo ipsam illo impedit deleniti accusamus.
@@ -300,7 +300,7 @@
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
                         <img src="images/features/wifi.svg" width="30px" alt="">
-                        <h6 class="m-0 ms-2">Random user1</h6>
+                        <h6 class="m-0 ms-2">Random user3</h6>
                     </div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                         Adipisci minima possimus necessitatibus non fugiat nemo ipsam illo impedit deleniti accusamus.
@@ -315,7 +315,7 @@
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
                         <img src="images/features/wifi.svg" width="30px" alt="">
-                        <h6 class="m-0 ms-2">Random user1</h6>
+                        <h6 class="m-0 ms-2">Random user4</h6>
                     </div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                         Adipisci minima possimus necessitatibus non fugiat nemo ipsam illo impedit deleniti accusamus.
@@ -330,7 +330,7 @@
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
                         <img src="images/features/wifi.svg" width="30px" alt="">
-                        <h6 class="m-0 ms-2">Random user1</h6>
+                        <h6 class="m-0 ms-2">Random user5</h6>
                     </div>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                         Adipisci minima possimus necessitatibus non fugiat nemo ipsam illo impedit deleniti accusamus.
@@ -351,7 +351,7 @@
     </div>
     
     
-    <!-- Testimonials -->
+    <!-- Reach Us -->
 
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
 
@@ -396,6 +396,7 @@
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: "auto",
+            loop: true,
             slidesPerView: 3,
             coverflowEffect: {
                 rotate: 50,
