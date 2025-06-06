@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TripOnTheGo-facilities</title>
+    <title>TripOnTheGo - Facilities</title>
 
-    
-    
     <?php require('inc/links.php');?>
     <style>
         .pop:hover{
@@ -21,11 +19,10 @@
 
     <?php require('inc/header.php');?>
 
-    <div class="mg-5 px-4">
+    <div class="my-5 px-4">
         <h2 class="fw-bold h-font text-center">OUR FACILITIES</h2>
         <div class="h-line bg-dark"></div>
-        <p class="text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quae, odit possimus incidunt harum facilis libero vel voluptates voluptate labore nemo esse obcaecati error magni ipsum porro aliquid distinctio id?
-        </p>
+        <p class="text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quae, odit possimus <br> incidunt harum facilis libero vel voluptates voluptate labore nemo esse obcaecati error magni ipsum porro aliquid distinctio id?</p>
     </div>
 
     <div class="container">
@@ -36,10 +33,7 @@
                         <img src="images/features/wifi.svg" width="40px">
                         <h5 class="m-0 ms-3">Wifi</h5>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?
-
-                    </p>
-                    
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 px-4">
@@ -48,10 +42,7 @@
                         <img src="images/features/wifi.svg" width="40px">
                         <h5 class="m-0 ms-3">Wifi</h5>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?
-
-                    </p>
-                    
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 px-4">
@@ -60,10 +51,7 @@
                         <img src="images/features/wifi.svg" width="40px">
                         <h5 class="m-0 ms-3">Wifi</h5>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?
-
-                    </p>
-                    
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 px-4">
@@ -72,10 +60,7 @@
                         <img src="images/features/wifi.svg" width="40px">
                         <h5 class="m-0 ms-3">Wifi</h5>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?
-
-                    </p>
-                    
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 px-4">
@@ -84,10 +69,7 @@
                         <img src="images/features/wifi.svg" width="40px">
                         <h5 class="m-0 ms-3">Wifi</h5>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?
-
-                    </p>
-                    
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-5 px-4">
@@ -96,10 +78,7 @@
                         <img src="images/features/wifi.svg" width="40px">
                         <h5 class="m-0 ms-3">Wifi</h5>
                     </div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?
-
-                    </p>
-                    
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam nisi libero accusamus accusantium doloribus vel maiores?</p>
                 </div>
             </div>
         </div>
