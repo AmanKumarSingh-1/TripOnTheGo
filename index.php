@@ -144,7 +144,6 @@
                                 <i class="bi bi-star-fill text-warning"></i>
                                 <i class="bi bi-star-fill text-warning"></i>
                             </span>
-                            
                         </div>
                         <div class="d-flex justify-content-evenly mb-2">
                             <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
