@@ -10,7 +10,11 @@
                     <a class="nav-link active me-2" aria-current="page" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link me-2" href="#">Rooms</a>
+=======
+                    <a class="nav-link me-2" href="rooms.php">Rooms</a>
+>>>>>>> 58b008ba0768183ac6a2fc41a4502be7f143b0b4
                 </li>
                 <li class="nav-item">
                     <a class="nav-link me-2" href="facilities.php">Facilities</a>
@@ -19,13 +23,20 @@
                     <a class="nav-link me-2" href="contact.php">Contact Us</a>
                 </li>
                 <li class="nav-item">
+<<<<<<< HEAD
                     <a class="nav-link me-2" href="about.php">About</a>
+=======
+                    <a class="nav-link me-2" href="about.php">About Us</a>
+>>>>>>> 58b008ba0768183ac6a2fc41a4502be7f143b0b4
                 </li>
             </ul>
             <div class="d-flex">
                 <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+<<<<<<< HEAD
             </div>
             <div class="d-flex">
+=======
+>>>>>>> 58b008ba0768183ac6a2fc41a4502be7f143b0b4
                 <button type="button" class="btn btn-outline-dark shadow-none " data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
             </div>
         </div>
