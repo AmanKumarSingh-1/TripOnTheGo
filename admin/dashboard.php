@@ -1,15 +1,24 @@
 <?php
+<<<<<<< HEAD
 require("inc/essentials.php");
 adminLogin();
+=======
+    require("inc/essentials.php");
+    adminLogin();
+>>>>>>> 58b008ba0768183ac6a2fc41a4502be7f143b0b4
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 58b008ba0768183ac6a2fc41a4502be7f143b0b4
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - Dashboard</title>
+<<<<<<< HEAD
     <?php require("inc/links.php") ?>
 </head>
 
@@ -27,4 +36,17 @@ adminLogin();
     <?php require("inc/scripts.php") ?>
 </body>
 
+=======
+    <?php require("inc/links.php")?>
+</head>
+<body class="bg-light">
+
+    <div class="container-fluid bg-dark text-light p-3 d-flex align-items-center justify-content-between">
+        <h3 class="mb-0">ADMIN PANEL</h3>
+        <a href="logout.php" class="btn btn-light btn-sm">LOG OUT</a>
+    </div>
+
+    <?php require("inc/scripts.php") ?>    
+</body>
+>>>>>>> 58b008ba0768183ac6a2fc41a4502be7f143b0b4
 </html>
