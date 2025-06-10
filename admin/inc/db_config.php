@@ -3,11 +3,7 @@
     $hname = 'localhost';
     $uname = 'root';
     $pass = '';
-<<<<<<< HEAD
     $db = 'admin_cred';
-=======
-    $db = 'totgwebsite';
->>>>>>> 58b008ba0768183ac6a2fc41a4502be7f143b0b4
 
     $con = mysqli_connect($hname, $uname, $pass, $db);
 
@@ -44,7 +40,6 @@
         }
     }
 
-<<<<<<< HEAD
 
     
     function update($sql, $values, $datatypes) 
@@ -69,6 +64,4 @@
     }
 
 
-=======
->>>>>>> 58b008ba0768183ac6a2fc41a4502be7f143b0b4
 ?>
