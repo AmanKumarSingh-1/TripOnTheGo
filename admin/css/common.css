@@ -38,7 +38,6 @@ input[type=number] {
 
 .custom-alert {
     position: fixed;
-<<<<<<< HEAD
     top: 80px;
     right: 25px;
 }
@@ -57,8 +56,3 @@ input[type=number] {
     margin-top: 60px;
 }
 } 
-=======
-    top: 25px;
-    right: 25px;
-}
->>>>>>> 58b008ba0768183ac6a2fc41a4502be7f143b0b4

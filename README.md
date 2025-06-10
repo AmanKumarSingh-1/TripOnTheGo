@@ -1,2 +1,0 @@
-# TripOnTheGo
-Hotel Booking Website..
