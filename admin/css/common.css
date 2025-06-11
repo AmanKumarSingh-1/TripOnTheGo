@@ -50,7 +50,7 @@ input[type=number] {
 @media screen and (max-width: 991px){
     #dashboard-menu{
     width : 100%;
-    height: auto
+    height: auto;
 }
 #main-content{
     margin-top: 60px;
