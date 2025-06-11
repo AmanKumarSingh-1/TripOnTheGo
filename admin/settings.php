@@ -157,23 +157,19 @@ adminLogin();
         }
 
 
-        function upd_shutdown(val){
-
-             let xhr = new XMLHttpRequest();
+        function upd_shutdown(val) {
+            let xhr = new XMLHttpRequest();
             xhr.open("POST", "ajax/settings_crud.php", true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             xhr.onload = function() {
-
-                if (this.responseText == 1 && general_data.shutdown==0)
-                {
+                if (this.responseText == 1 && general_data.shutdown == 0) {
                     alert('success', 'Site has been shutdown!');
-                   
                 } else {
                     alert('success', 'Shutdown mode off!');
                 }
             }
-            xhr.send('upd_shutdown='+val);
+            xhr.send('upd_shutdown=' + val);
         }
 
 
