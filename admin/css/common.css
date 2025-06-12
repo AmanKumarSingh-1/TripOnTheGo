@@ -45,12 +45,13 @@ input[type=number] {
 #dashboard-menu{
     position: fixed;
     height: 100%;
+    z-index: 11;
 }
 
 @media screen and (max-width: 991px){
     #dashboard-menu{
     width : 100%;
-    height: auto
+    height: auto;
 }
 #main-content{
     margin-top: 60px;
