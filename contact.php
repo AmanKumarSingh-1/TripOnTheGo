@@ -30,18 +30,18 @@
                     <iframe class="w-100 rounded mb-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117711.79652321864!2d86.09336889558041!3d22.784165518854753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e31989f0e2b5%3A0xeeec8e81ce9b344!2sJamshedpur%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1749109966243!5m2!1sen!2sin" height="320" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h5>Address</h5>
                     <a href="https://maps.app.goo.gl/zrGTS44hNgUrE9ke9" target="blank" class="d-inline-block text-decoration-none text-dark" mb-4>
-                        <i class="bi bi-geo-alt-fill"></i> XYZ, Prayagraj, Uttar Pradesh
+                        <i class="bi bi-geo-alt-fill"></i> Tata Motors Ltd., Jamshedpur
                     </a>
 
                     <!-- CALL US -->
 
                     <h5 class="mt-4">Call Us</h5>
                     <a href="tel: +919876543210" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-telephone-fill"></i> +919876543210
+                        <i class="bi bi-telephone-fill"></i> +91 9876543210
                     </a>
                     <br>
                     <a href="tel: +919876543210" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-telephone-fill"></i> +919876543210
+                        <i class="bi bi-telephone-fill"></i> +91 9876543210
                     </a>
 
                     <h5 class="mt-4">Email</h5>
@@ -62,31 +62,32 @@
                 </div>
             </div>
 
-                    <div class="col-lg-6 col-md-6 px-4">
-                        <div class="bg-white rounded shadow p-4">
-                            <form>
-                                <h5>Send a message</h5>
-                                <div class="mb-3">
-                                    <label class="form-label">Name</label>
-                                <input type="text" class="form-control shadow-none">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Email</label>
-                                <input type="email" class="form-control shadow-none">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Subject</label>
-                                <input type="text" class="form-control shadow-none">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Message</label>
-                                    <textarea class="form-control shadow-none" rows="5" style="resize : none;"></textarea>
-                                </div>
-                                  <button type="submit" class="btn btn-dark shadow-none">SEND</button>
-                            </form>
+            <div class="col-lg-6 col-md-6 px-4">
+                <div class="bg-white rounded shadow p-4">
+                    <form>
+                        <h5>Send a message</h5>
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                        <input type="text" class="form-control shadow-none">
                         </div>
-                    </div>
-                
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                        <input type="email" class="form-control shadow-none">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                        <input type="text" class="form-control shadow-none">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control shadow-none" rows="5" style="resize : none;"></textarea>
+                        </div>
+                            <button type="submit" class="btn btn-dark shadow-none">SEND</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
             <?php require('inc/footer.php') ?>
 
