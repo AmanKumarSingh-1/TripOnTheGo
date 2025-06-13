@@ -3,6 +3,7 @@
     --teal_hover:#279e8c;
 }
 
+
 *{
     font-family: "Poppins", sans-serif;
 }
@@ -37,7 +38,6 @@ input[type=number] {
 
 .custom-alert {
     position: fixed;
-
     top: 80px;
     right: 25px;
 }
@@ -50,13 +50,10 @@ input[type=number] {
 
 @media screen and (max-width: 991px){
     #dashboard-menu{
-        height: auto;
-        width : 100%;
+    width : 100%;
+    height: auto;
 }
 #main-content{
     margin-top: 60px;
- }
+}
 } 
-
-
-
