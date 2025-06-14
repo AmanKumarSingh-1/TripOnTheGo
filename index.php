@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TripOnTheGo - Home</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <?php require('inc/links.php');?>
-    <style>  
-        .availibility-form{
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <?php require('inc/links.php'); ?>
+    <style>
+        .availibility-form {
             position: relative;
             margin-top: -50px;
             z-index: 2;
         }
+
         @media screen and (max-width: 575px) {
             .availability-form {
                 margin-top: 20px;
@@ -26,9 +28,10 @@
         }
     </style>
 </head>
+
 <body class="bg-light">
 
-    <?php require('inc/header.php');?>
+    <?php require('inc/header.php'); ?>
 
     <!-- carousel -->
 
@@ -36,23 +39,23 @@
         <div class="swiper-container swiper-hero">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                <img src="images/carousel/1.png" class="w-100 d-block"/>
+                    <img src="images/carousel/1.png" class="w-100 d-block" />
                 </div>
                 <div class="swiper-slide">
-                <img src="images/carousel/2.png" class="w-100 d-block"/>
+                    <img src="images/carousel/2.png" class="w-100 d-block" />
                 </div>
                 <div class="swiper-slide">
-                <img src="images/carousel/3.png" class="w-100 d-block"/>
+                    <img src="images/carousel/3.png" class="w-100 d-block" />
                 </div>
                 <div class="swiper-slide">
-                <img src="images/carousel/4.png" class="w-100 d-block"/>
+                    <img src="images/carousel/4.png" class="w-100 d-block" />
                 </div>
                 <div class="swiper-slide">
-                <img src="images/carousel/5.png" class="w-100 d-block"/>
+                    <img src="images/carousel/5.png" class="w-100 d-block" />
                 </div>
                 <div class="swiper-slide">
-                <img src="images/carousel/6.png" class="w-100 d-block"/>
-                </div>        
+                    <img src="images/carousel/6.png" class="w-100 d-block" />
+                </div>
             </div>
         </div>
     </div>
@@ -185,7 +188,7 @@
                                 <i class="bi bi-star-fill text-warning"></i>
                                 <i class="bi bi-star-fill text-warning"></i>
                             </span>
-                            
+
                         </div>
                         <div class="d-flex justify-content-evenly mb-2">
                             <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
@@ -227,7 +230,7 @@
                                 <i class="bi bi-star-fill text-warning"></i>
                                 <i class="bi bi-star-fill text-warning"></i>
                             </span>
-                            
+
                         </div>
                         <div class="d-flex justify-content-evenly mb-2">
                             <a href="#" class="btn btn-sm text-white custom-bg shadow-none">Book Now</a>
@@ -245,7 +248,7 @@
     <!-- Our Facilities -->
 
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">OUR FACILITIES</h2>
-    
+
     <div class="container">
         <div class="row justify-content-evenly px=lg-0 px-md-0 px-5">
             <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
@@ -273,11 +276,11 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Testimonials -->
-    
+
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">TESTIMONIALS</h2>
-    
+
     <div class="container mt-5">
         <div class="swiper-container swiper-testimonial">
             <div class="swiper-wrapper mb-5">
@@ -286,7 +289,7 @@
                         <img src="images/features/wifi.svg" width="30px" alt="">
                         <h6 class="m-0 ms-2">Random user1</h6>
                     </div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                         Adipisci minima possimus necessitatibus non fugiat nemo ipsam illo impedit deleniti accusamus.
                     </p>
                     <div class="rating">
@@ -295,13 +298,13 @@
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
                     </div>
-                </div>  
+                </div>
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
                         <img src="images/features/wifi.svg" width="30px" alt="">
                         <h6 class="m-0 ms-2">Random user2</h6>
                     </div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                         Adipisci minima possimus necessitatibus non fugiat nemo ipsam illo impedit deleniti accusamus.
                     </p>
                     <div class="rating">
@@ -310,13 +313,13 @@
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
                     </div>
-                </div>  
+                </div>
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
                         <img src="images/features/wifi.svg" width="30px" alt="">
                         <h6 class="m-0 ms-2">Random user3</h6>
                     </div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                         Adipisci minima possimus necessitatibus non fugiat nemo ipsam illo impedit deleniti accusamus.
                     </p>
                     <div class="rating">
@@ -325,13 +328,13 @@
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
                     </div>
-                </div>  
+                </div>
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
                         <img src="images/features/wifi.svg" width="30px" alt="">
                         <h6 class="m-0 ms-2">Random user4</h6>
                     </div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                         Adipisci minima possimus necessitatibus non fugiat nemo ipsam illo impedit deleniti accusamus.
                     </p>
                     <div class="rating">
@@ -340,13 +343,13 @@
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
                     </div>
-                </div>  
+                </div>
                 <div class="swiper-slide bg-white p-4">
                     <div class="profile d-flex align-items-center mb-3">
                         <img src="images/features/wifi.svg" width="30px" alt="">
                         <h6 class="m-0 ms-2">Random user5</h6>
                     </div>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                         Adipisci minima possimus necessitatibus non fugiat nemo ipsam illo impedit deleniti accusamus.
                     </p>
                     <div class="rating">
@@ -355,7 +358,7 @@
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
                     </div>
-                </div>  
+                </div>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -363,33 +366,51 @@
             <a href="" class="btn btn-sm btn-outline-dark rounded=0 fw-bold shadow-none">Know more >>></a>
         </div>
     </div>
-    
-    
+
+
     <!-- Reach Us -->
 
+    
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>
 
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded">
-                <iframe class="w-100 rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117711.79652321864!2d86.09336889558041!3d22.784165518854753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e31989f0e2b5%3A0xeeec8e81ce9b344!2sJamshedpur%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1749109966243!5m2!1sen!2sin" height="320" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe class="w-100 rounded" src=" <?php echo $contact_r['iframe'] ?>" height="320" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="bg-white p-4 mb-4 rounded">
                     <h5>Call Us</h5>
-                    <a class="d-inline-block mb-2 text-decoration-none text-dark" href="tel: +919876543210"><i class="bi bi-telephone-fill"></i> +91 9876543210</a><br>
-                    <a class="d-inline-block mb-2 text-decoration-none text-dark" href="tel: +919876543210"><i class="bi bi-telephone-fill"></i> +91 9876543210</a>
+                    <a class="d-inline-block mb-2 text-decoration-none text-dark" href="tel: +<?php echo $contact_r['pn1'] ?>"><i class="bi bi-telephone-fill"></i> +<?php echo $contact_r['pn1'] ?></a><br>
+
+                    <?php
+                    if ($contact_r['pn2'] != '') {
+                        echo <<<data
+                            <a class="d-inline-block mb-2 text-decoration-none text-dark" href="tel: +$contact_r[pn2]"><i class="bi bi-telephone-fill"></i> +$contact_r[pn2]</a>
+                            data;
+                    }
+                    ?>
+
                 </div>
                 <div class="bg-white p-4 mb-4 rounded">
                     <h5>Follow Us</h5>
-                    <a class="d-inline-block mb-3" href="#">
+
+                    <?php
+                    if ($contact_r['facebook'] != '') {
+                        echo <<<data
+                        <a class="d-inline-block mb-3" href="$contact_r[facebook]">
                         <span class="badge bg-light text-dark fs-6 p-2"><i class="bi bi-facebook"></i> Facebook</span>
-                    </a><br>
+                        </a><br>
+
+                        data;
+                    }
+                    ?>
+
                     <a class="d-inline-block mb-3" href="#">
                         <span class="badge bg-light text-dark fs-6 p-2"><i class="bi bi-instagram"></i> Instagram</span>
                     </a><br>
-                    <a class="d-inline-block" href="#">
-                        <span class="badge bg-light text-dark fs-6 p-2"><i class="bi bi-twitter-x"></i> <i class="bi bi-twitter-x"></i></span>
+                    <a class="d-inline-block" href="<?php echo $contact_r['twitter'] ?>">
+                        <span class="badge bg-light text-dark fs-6 p-2"><i class="bi bi-twitter-x"></i> <i class="bi bi-twitter-x"></i> Twitter</span>
                     </a><br>
                 </div>
             </div>
@@ -398,12 +419,12 @@
 
     <!-- Footer -->
 
-    <?php require('inc/footer.php')?>
+    <?php require('inc/footer.php') ?>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
+
     <script>
         var swiper = new Swiper(".swiper-testimonial", {
             effect: "coverflow",
@@ -445,11 +466,11 @@
             effect: "fade",
             loop: true,
             autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
+                delay: 3000,
+                disableOnInteraction: false,
             },
         });
     </script>
 </body>
-</html>
 
+</html>
