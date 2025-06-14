@@ -1,10 +1,14 @@
+<?php 
+  require('admin/inc/essentials.php');
+  require('admin/inc/db_config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TripOnTheGo-CONTACT</title>
+    <title>TripOnTheGo - CONTACT</title>
 
     <?php require('inc/links.php'); ?>
 
@@ -21,17 +25,14 @@
         </p>
     </div>
 
-
-
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4">
-                    <iframe class="w-100 rounded mb-4" src="<?php echo $contact_r['iframe'] ?>" height="320" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+                    <iframe class="w-100 rounded mb-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117711.79652321864!2d86.09336889558041!3d22.784165518854753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e31989f0e2b5%3A0xeeec8e81ce9b344!2sJamshedpur%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1749109966243!5m2!1sen!2sin" height="320" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h5>Address</h5>
-                    <a href="<?php echo $contact_r['gmap'] ?>" target="blank" class="d-inline-block text-decoration-none text-dark" mb-4>
-                        <i class="bi bi-geo-alt-fill"></i> <?php echo $contact_r['address'] ?>
+                    <a href="https://maps.app.goo.gl/zrGTS44hNgUrE9ke9" target="blank" class="d-inline-block text-decoration-none text-dark" mb-4>
+                        <i class="bi bi-geo-alt-fill"></i> XYZ, Prayagraj, Uttar Pradesh
                     </a>
 
                     <!-- CALL US -->
@@ -90,31 +91,48 @@
 
             <div class="col-lg-6 col-md-6 px-4">
                 <div class="bg-white rounded shadow p-4">
-                    <form>
+                    <form method="POST">
                         <h5>Send a message</h5>
                         <div class="mb-3">
                             <label class="form-label">Name</label>
-                            <input type="text" class="form-control shadow-none">
+                        <input name="name" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email</label>
-                            <input type="email" class="form-control shadow-none">
+                        <input name="email" required type="email" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Subject</label>
-                            <input type="text" class="form-control shadow-none">
+                        <input name="subject" required type="text" class="form-control shadow-none">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message</label>
-                            <textarea class="form-control shadow-none" rows="5" style="resize : none;"></textarea>
+                            <textarea name="message" required class="form-control shadow-none" rows="5" style="resize : none;"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-dark shadow-none">SEND</button>
+                            <button type="submit" name="send" class="btn btn-dark shadow-none">SEND</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+              
+    <?php 
+      If(isset($_POST['send']))
+      {
+        $frm_data = filteration($_POST);
 
+        $q = "INSERT INTO `user_queries`(`name`, `email`, `subject`, `message`) VALUES (?,?,?,?)";
+        $values = [$frm_data['name'],$frm_data['email'],$frm_data['subject'],$frm_data['message']];
+
+        $res = insert($q, $values,'ssss');
+        if($res==1){
+            alert('success','Mail Sent');
+        }
+        else{
+            alert('error','Server Down Try Again Later');
+        }
+      }
+    ?>
 
             <?php require('inc/footer.php') ?>
 
