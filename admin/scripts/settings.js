@@ -156,7 +156,7 @@
         team_s_form.addEventListener('submit',function(e){
             e.preventDefault();
             add_member();
-        })
+        });
 
         function add_member(){
             let data=new FormData();
