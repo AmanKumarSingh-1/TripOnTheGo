@@ -406,7 +406,7 @@
                     }
                     ?>
 
-                    <a class="d-inline-block mb-3" href="#">
+                    <a class="d-inline-block mb-3" href="<?php echo $contact_r['insta'] ?>">
                         <span class="badge bg-light text-dark fs-6 p-2"><i class="bi bi-instagram"></i> Instagram</span>
                     </a><br>
                     <a class="d-inline-block" href="<?php echo $contact_r['twitter'] ?>">
