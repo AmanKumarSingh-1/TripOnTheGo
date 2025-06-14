@@ -38,6 +38,18 @@
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper-container swiper-hero">
             <div class="swiper-wrapper">
+                <?php
+                  $res=selectAll('carousel');
+                  while($row=mysqli_fetch_assoc($res))
+                   {
+                     $path=CAROUSEL_IMG_PATH;
+                     echo <<<data
+                      <div class="swiper-slide">
+                        <img src="$path$row[image]" class="w-100 d-block"/>
+                       </div>
+                   data;
+                   }
+                ?>
                 <div class="swiper-slide">
                     <img src="images/carousel/1.png" class="w-100 d-block" />
                 </div>

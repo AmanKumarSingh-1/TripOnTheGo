@@ -48,8 +48,6 @@
         }
     }
 
-
-    
     function update($sql, $values, $datatypes) 
     {
         $con = $GLOBALS['con'];
@@ -112,6 +110,5 @@
             die("Query cannot be prepared - Delete");
         }
     }
-
 
 ?>
