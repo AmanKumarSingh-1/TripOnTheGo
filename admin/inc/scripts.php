@@ -17,17 +17,18 @@
         document.getElementsByClassName('alert')[0].remove();
     }
    
-    function setActive(){
-        navbar = document.getElementById('dashboard-menu');
-        let a_tag = navbar.getElementByTagName('a');
-
-        for(i=0; i<a_tag.length; i++){
-            let file = a_tags[i].href.split('/').pop();           
+    function setActive() {
+        let navbar = document.getElementById('dashboard-menu');
+        if (!navbar) return;
+        
+        let a_tags = navbar.getElementsByTagName('a');
+        
+        for(let i = 0; i < a_tags.length; i++) {
+            let file = a_tags[i].href.split('/').pop();
             let file_name = file.split('.')[0];
-
-            if(dicument.location.href.indexOf(file_name) >= 0){
+            
+            if(document.location.href.includes(file_name)) {
                 a_tags[i].classList.add('active');
-
             }
         }
     }
