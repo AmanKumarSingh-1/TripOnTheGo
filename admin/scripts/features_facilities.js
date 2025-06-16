@@ -1,4 +1,3 @@
-
 let feature_s_form=document.getElementById('feature_s_form');
 let facility_s_form=document.getElementById('facility_s_form');
 feature_s_form.addEventListener('submit',function(e){
@@ -22,13 +21,13 @@ function add_feature(){
         modal.hide();
 
         if(this.responseText==1){
-            alert('success','new feature added');
+            alert('success','New feature added');
             feature_s_form.elements['feature_name'].value='';
             
             get_features();
         }
         else{
-            alert('error','server down');
+            alert('error','Server down');
         }
     }
     xhr.send(data);
@@ -54,14 +53,14 @@ function rem_feature(val)
 
     xhr.onload = function() {
         if(this.responseText==1){
-            alert('success','feature removed');
+            alert('success','Feature removed');
             get_features();
         }
         else if(this.responseText=='room_added'){
-            alert('error','feature is added in room')
+            alert('error','Feature is added in room')
         }
         else{
-            alert('error','server down');
+            alert('error','Server down');
         }
     }
 
@@ -91,17 +90,17 @@ function add_facility(){
         modal.hide();
 
         if(this.responseText=='inv_img'){
-            alert('error','only svgimages are allowed');
+            alert('error','Only svgimages are allowed');
         }
         else if(this.responseText=='inv_size'){
-            alert('error','image should be less than 1MB');
+            alert('error','Image should be less than 1MB');
         }
         else if(this.responseText=='upd_failed'){
-            alert('error','image upload failed,server down');
+            alert('error','Image upload failed,Server down');
             
         }
         else{
-            alert('success','new facility added');
+            alert('success','New facility added');
             facility_s_form.reset();
             get_facilities();
         }
@@ -130,14 +129,14 @@ function rem_facility(val)
 
     xhr.onload = function() {
         if(this.responseText==1){
-            alert('success','facility removed');
+            alert('success','Facility removed');
             get_facilities();
         }
         else if(this.responseText=='room_added'){
-            alert('error','facility is added in room');
+            alert('error','Facility is added in room');
         }
         else{
-            alert('error','server down');
+            alert('error','Server down');
         }
     }
 
