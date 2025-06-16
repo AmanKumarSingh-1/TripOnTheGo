@@ -23,13 +23,13 @@
                 modal.hide();
 
                 if(this.responseText=='inv_img'){
-                    alert('error','only jpg and png images are allowed');
+                    alert('error','Only JPG,, WEBP, JPEG or PNG images are allowed');
                 }
                 else if(this.responseText=='inv_size'){
-                    alert('error','image should be less than 2MB');
+                    alert('error','Image should be less than 2MB');
                 }
                 else if(this.responseText=='upd_failed'){
-                    alert('error','image upload failed,server down');
+                    alert('error','Image upload failed,server down');
                     
                 }
                 else{
