@@ -10,6 +10,31 @@
     define('CAROUSEL_FOLDER','carousel/');
     define('FACILITIES_FOLDER','facilities/');
     define('ROOMS_FOLDER','rooms/');
+    define('USERS_FOLDER','users/');
+
+    function loadEnv($path)
+    {
+        if (!file_exists($path)) return;
+
+        $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+
+        foreach ($lines as $line) {
+            if (str_starts_with(trim($line), '#')) continue; 
+
+            list($name, $value) = explode('=', $line, 2);
+            $name = trim($name);
+            $value = trim($value);
+
+            if (!array_key_exists($name, $_ENV)) {
+                $_ENV[$name] = $value;
+                putenv("$name=$value");
+            }
+        }
+    }
+
+    loadEnv(__DIR__ . '/../../.env');
+
+    define('SENDGRID_API_KEY', $_ENV['SENDGRID_API_KEY']);
 
     function adminLogin() {
         session_start();
@@ -97,6 +122,37 @@
                 return $rname;
             }
             else{
+                return 'upd_failed';
+            }
+        }
+    }
+
+    function uploadUserImage($image)
+    {
+        $valid_mime = ['image/jpeg', 'image/png', 'image/webp', 'image/jpg'];
+        $img_mime = $image['type']; 
+
+        if (!in_array($img_mime, $valid_mime)) {
+            return 'inv_img'; 
+        }
+        else{
+            $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+            $rname = 'IMG_' . random_int(11111, 99999) . ".jpeg";
+            $img_path = UPLOAD_IMAGE_PATH . USERS_FOLDER . $rname;
+
+            if($ext == 'png' || $ext == 'PNG') {
+            $img = imagecreatefrompng($image['tmp_name']);
+            }
+            else if($ext == 'webp' || $ext == 'WEBP'){
+                $img = imagecreatefromwebp($image['tmp_name']);
+            }
+            else{
+                $img = imagecreatefromjpeg($image['tmp_name']);
+            }
+
+            if (imagejpeg($img,$img_path,75)) {
+                return $rname;
+            } else {
                 return 'upd_failed';
             }
         }

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TripOnTheGo - ROOM DETAILS</title>
     <?php require('inc/links.php'); ?>
+    <title><?php echo $settings_r['site_title'] ?> - Room Details</title>
 </head>
 
 <body class="bg-light">
@@ -125,7 +125,7 @@
                             facilities;
 
                             echo<<<guests
-                                </div>
+                                <div class="mb-3">
                                     <div class="guests mb-4">
                                         <h6 class="mb-1">Guests</h6>
                                         <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> $room_data[adult] Adults </span>
