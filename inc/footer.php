@@ -95,12 +95,14 @@ register_form.addEventListener('submit', (e) => {
     data.append('pass', register_form.elements['pass'].value);
     data.append('cpass', register_form.elements['cpass'].value);
     data.append('profile', register_form.elements['profile'].files[0]);
-    data.append('register', '1');  
+    data.append('register', '1');  // <- Send a meaningful value instead of empty string
 
+    // Debugging - check the form data (optional)
     for (let [key, value] of data.entries()) {
         console.log(`${key}:`, value);
     }
 
+    // Optional: Don't hide modal if you're debugging
     var myModal = document.getElementById('registerModal');
     var modal = bootstrap.Modal.getInstance(myModal);
     modal.hide();
@@ -109,15 +111,16 @@ register_form.addEventListener('submit', (e) => {
     xhr.open("POST", "ajax/login_register.php", true);
 
     xhr.onload = function () {
-        console.log("Server response:", this.responseText); 
+        console.log("Server response:", this.responseText); // Add this
 
+        // Adjusted error check (check for typos in PHP messages)
         if (this.responseText.trim() === 'pass_mismatch') {
             alert('error', "Password Mismatched!");
         } else if (this.responseText.trim() === 'email_already') {
             alert('error', "Email is already registered!");
         } else if (this.responseText.trim() === 'phone_already') {
             alert('error', "Phone Number is already registered!");
-        } else if (this.responseText.trim() === 'inv_img') {    
+        } else if (this.responseText.trim() === 'inv_img') {  // <- fixed typo
             alert('error', "Only JPG, WEBP, PNG Images are allowed!");
         } else if (this.responseText.trim() === 'upd_failed') {
             alert('error', "Image Upload Failed!");

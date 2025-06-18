@@ -36,6 +36,7 @@
 
     define('SENDGRID_API_KEY', $_ENV['SENDGRID_API_KEY']);
 
+
     function adminLogin() {
         session_start();
         if(!(isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
@@ -157,5 +158,4 @@
             }
         }
     }
-
 ?>

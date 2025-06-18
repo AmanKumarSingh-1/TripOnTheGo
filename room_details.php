@@ -125,7 +125,7 @@
                             facilities;
 
                             echo<<<guests
-                                <div class="mb-3">
+                                </div>
                                     <div class="guests mb-4">
                                         <h6 class="mb-1">Guests</h6>
                                         <span class="badge rounded-pill bg-light text-dark text-wrap lh-base"> $room_data[adult] Adults </span>

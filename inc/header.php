@@ -25,7 +25,7 @@
                
             </ul>
             <div class="d-flex">
-                <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2 mb-1" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+                <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
 
             </div>
             <div class="d-flex">
@@ -79,39 +79,39 @@
                         <div class="row">
                             <div class="col-md-6 ps-0 mb-3">
                                 <label class="form-label">Name</label>
-                                <input name="name" type="text" class="form-control shadow-none" required>
+                                <input name="name" type="text" class="form-control shadow-none" reqired>
                             </div>
                             <div class="col-md-6 p-0 mb-3">
                                 <label class="form-label">Email</label>
-                                <input name="email" type="email" class="form-control shadow-none" required>
+                                <input name="email" type="email" class="form-control shadow-none" reqired>
                             </div>
                             <div class="col-md-6 ps-0 mb-3">
                                 <label class="form-label">Phone Number</label>
-                                <input name="phonenum" type="number" class="form-control shadow-none" required>
+                                <input name="phonenum" type="number" class="form-control shadow-none" reqired>
                             </div>
                             <div class="col-md-6 p-0 mb-3">
                                 <label class="form-label">Picture</label>
-                                <input name="profile" type="file" accept=".jpg, .jpeg, .png, .webp" class="form-control shadow-none" required>
+                                <input name="profile" type="file" accept=".jpg, .jpeg, .png, .webp" class="form-control shadow-none" reqired>
                             </div>
                             <div class="col-md-12 p-0 mb-3">
                                 <label class="form-label">Address</label>
-                                <textarea name="address" class="form-control shadow-none" rows="1" required></textarea>
+                                <textarea name="address" class="form-control shadow-none" rows="1" reqired></textarea>
                             </div>
                             <div class="col-md-6 ps-0 mb-3">
                                 <label class="form-label">Pincode</label>
-                                <input name="pincode" type="number" class="form-control shadow-none"  required>
+                                <input name="pincode" type="number" class="form-control shadow-none"  reqired>
                             </div>
                             <div class="col-md-6 p-0 mb-3">
                                 <label class="form-label">Date of Birth</label>
-                                <input name="dob" type="date" class="form-control shadow-none" required>
+                                <input name="dob" type="date" class="form-control shadow-none" reqired>
                             </div>
                             <div class="col-md-6 ps-0 mb-3">
                                 <label class="form-label">Password</label>
-                                <input name="pass" type="password" class="form-control shadow-none" required>
+                                <input name="pass" type="password" class="form-control shadow-none" reqired>
                             </div>
                             <div class="col-md-6 p-0 mb-3">
                                 <label class="form-label">Confirm password</label>
-                                <input name="cpass" type="password" class="form-control shadow-none" required>
+                                <input name="cpass" type="password" class="form-control shadow-none" reqired>
                             </div>
                         </div>
                     </div>
