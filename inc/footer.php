@@ -1,5 +1,5 @@
 <div class="container-fluid bg-white mt-5">
-    <div class="row">
+    <div class="row"  style="border-top: 1px solid #ccc; padding: 20px;">
         <div class="col-lg-4">
             <h3 class="h-font fw-bold fs-3 mb-2"><?php echo $settings_r['site_title'] ?></h3>
             <p>
@@ -81,7 +81,7 @@
 
     let register_form = document.getElementById('register-form');
 
-register_form.addEventListener('submit', (e) => {
+    register_form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     let data = new FormData();
@@ -95,14 +95,12 @@ register_form.addEventListener('submit', (e) => {
     data.append('pass', register_form.elements['pass'].value);
     data.append('cpass', register_form.elements['cpass'].value);
     data.append('profile', register_form.elements['profile'].files[0]);
-    data.append('register', '1');  // <- Send a meaningful value instead of empty string
+    data.append('register', '1'); 
 
-    // Debugging - check the form data (optional)
     for (let [key, value] of data.entries()) {
         console.log(`${key}:`, value);
     }
 
-    // Optional: Don't hide modal if you're debugging
     var myModal = document.getElementById('registerModal');
     var modal = bootstrap.Modal.getInstance(myModal);
     modal.hide();
@@ -111,16 +109,15 @@ register_form.addEventListener('submit', (e) => {
     xhr.open("POST", "ajax/login_register.php", true);
 
     xhr.onload = function () {
-        console.log("Server response:", this.responseText); // Add this
+        console.log("Server response:", this.responseText); 
 
-        // Adjusted error check (check for typos in PHP messages)
         if (this.responseText.trim() === 'pass_mismatch') {
             alert('error', "Password Mismatched!");
         } else if (this.responseText.trim() === 'email_already') {
             alert('error', "Email is already registered!");
         } else if (this.responseText.trim() === 'phone_already') {
             alert('error', "Phone Number is already registered!");
-        } else if (this.responseText.trim() === 'inv_img') {  // <- fixed typo
+        } else if (this.responseText.trim() === 'inv_img') {  
             alert('error', "Only JPG, WEBP, PNG Images are allowed!");
         } else if (this.responseText.trim() === 'upd_failed') {
             alert('error', "Image Upload Failed!");
