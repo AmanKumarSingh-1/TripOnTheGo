@@ -2,20 +2,33 @@
 require(__DIR__ . "/../admin/inc/db_config.php");
 require(__DIR__ . "/../admin/inc/essentials.php");
 require("../inc/sendgrid/sendgrid-php.php");
+date_default_timezone_set("Asia/Kolkata");
 
-function send_mail($uemail,$name,$token)
+function send_mail($uemail,$token,$type)
 {
-    $email = new \SendGrid\Mail\Mail(); 
-    $email->setFrom("gauravsinha944@gmail.com", "TripOnTheGo");
-    $email->setSubject("Account Verification Link");
+    if($type == "email_confirmation"){
+        $page = 'email_confirm.php';
+        $subject = "Account verification Link";
+        $content = "confirm your email";
+        }
+        else{
+        $page = 'index.php';
+        $subject = "Account verification Link";
+        $content = "reset your account";
+        }
+        
 
-    $email->addTo($uemail, $name);
+    $email = new \SendGrid\Mail\Mail(); 
+    $email->setFrom(SENDGRID_EMAIL, SENDGRID_NAME);
+    $email->setSubject("$subject");
+
+    $email->addTo($uemail);
 
     $email->addContent(
         "text/html", 
         " 
-               Click the link upabove to verify your account and confirm your email <br>
-               <a href='".SITE_URL."email_confirm.php?email_confirmation&email=$uemail&token=$token"."'>
+               Click the link to $content: <br>
+               <a href='".SITE_URL."$page?$type&email=$uemail&token=$token"."'>
                  Click me
                 </a>
                "
@@ -34,19 +47,17 @@ function send_mail($uemail,$name,$token)
     }
 }
 
+
 if (isset($_POST['register'])) {
-    // Debugging aid
     file_put_contents("log.txt", "Received registration request\n", FILE_APPEND);
 
     $data = filteration($_POST);
 
-    // Match password and confirm password
     if ($data['pass'] != $data['cpass']) {
         echo 'pass_mismatch';
         exit;
     }
 
-    // Check if user already exists
     $u_exist = select("SELECT * FROM `user_cred` WHERE `email` = ? OR `phonenum` = ? LIMIT 1", 
                       [$data['email'], $data['phonenum']], "ss");
 
@@ -56,7 +67,6 @@ if (isset($_POST['register'])) {
         exit;
     }
 
-    // Upload user profile image
     $img = uploadUserImage($_FILES['profile']);
 
     if ($img == 'inv_img') {
@@ -67,17 +77,14 @@ if (isset($_POST['register'])) {
         exit;
     }
 
-    // Send confirmation link to user's email
     $token = bin2hex(random_bytes(16));
-    if (!send_mail($data['email'], $data['name'], $token)) {
+    if (!send_mail($data['email'],$token,"email_confirmation")) {
         echo 'mail_failed';
         exit;
     }
 
-    // Encrypt password
     $enc_pass = password_hash($data['pass'], PASSWORD_BCRYPT);
 
-    // Insert into database
     $query = "INSERT INTO `user_cred` (`name`, `email`, `address`, `phonenum`, `pincode`, `dob`, `profile`, `password`, `token`) 
               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $values = [
@@ -92,4 +99,98 @@ if (isset($_POST['register'])) {
         echo 'ins_failed: ' . mysqli_error($con);
     }
 }
+
+
+if(isset($_POST['login'])) {
+    $data = filteration($_POST);
+
+    $u_exist = select("SELECT * FROM `user_cred` WHERE `email` = ? OR `phonenum` = ? LIMIT 1", 
+                      [$data['email_mob'], $data['email_mob']], "ss");
+
+    if (mysqli_num_rows($u_exist) == 0) {
+        echo 'inv_email_mob';
+        exit;
+    }
+    else {
+        $u_fetch = mysqli_fetch_assoc($u_exist);
+        if($u_fetch['is_verified'] == 0) {
+            echo 'not_verified';
+        }
+        else if($u_fetch['status'] == 0) {
+            echo 'inactive';
+        }
+        else {
+            if(!password_verify($data['pass'], $u_fetch['password'])) {
+                echo 'inv_pass';
+            }
+            else {
+                session_start();
+                $_SESSION['login'] = true;
+                $_SESSION['uId'] = $u_fetch['id'];
+                $_SESSION['uName'] = $u_fetch['name'];
+                $_SESSION['uPic'] = $u_fetch['profile'];
+                $_SESSION['uPhone'] = $u_fetch['phonenum'];
+                echo 1; 
+            }
+        }
+        
+    }
+    
+}
+
+if(isset($_POST['forgot_pass'])){
+    $data = filteration($_POST);
+    $u_exist = select("SELECT * FROM `user_cred` WHERE `email` = ? LIMIT 1", [$data['email']], "s");
+    if (mysqli_num_rows($u_exist) == 0) {
+        echo 'inv_email';
+    }
+    else
+    {
+        $u_fetch = mysqli_fetch_assoc($u_exist);
+        if($u_fetch['is_verified'] == 0) {
+            echo 'not_verified';
+        }
+        else if($u_fetch['status']==0) {
+            echo 'inactive';
+        }
+        else{
+            $token = bin2hex(random_bytes(16));
+
+            if(!send_mail($data['email'],$token,'account_recovery')){
+                echo 'mail_failed';
+            }
+            else
+            {
+                $date = date("Y-m-d");
+
+                $query = mysqli_query($con,"UPDATE `user_cred` SET `token`='$token', `t_expire`='$date' WHERE `id`='$u_fetch[id]'");
+
+                if($query){
+                    echo 1;
+                } else{
+                    echo 'upd_failed';
+                }
+
+            }
+            
+        }
+
+    }
+}
+
+if(isset($_POST['forgot_pass'])){
+    $data = filteration($_POST);
+
+    $enc_pass = password_hash($data['pass'], PASSWORD_BCRYPT);
+
+    $query = "UPDATE `user_cred` SET `password` = ?, `token` = ?, `t_expire` = ? WHERE `email` = ? AND `token` = ?";
+    $values = [$enc_pass, null, null, $data['email']. $data['token']];
+
+    if (update($query, $values, 'sssss')) {
+        echo 1;
+    } else {
+        echo 'failed';
+    }
+}
+
 ?>

@@ -1,5 +1,5 @@
 <div class="container-fluid bg-white mt-5">
-    <div class="row"  style="border-top: 1px solid #ccc; padding: 20px;">
+    <div class="row">
         <div class="col-lg-4">
             <h3 class="h-font fw-bold fs-3 mb-2"><?php echo $settings_r['site_title'] ?></h3>
             <p>
@@ -82,65 +82,147 @@
     let register_form = document.getElementById('register-form');
 
     register_form.addEventListener('submit', (e) => {
-    e.preventDefault();
+        e.preventDefault();
 
-    let data = new FormData();
+        let data = new FormData();
 
-    data.append('name', register_form.elements['name'].value);
-    data.append('email', register_form.elements['email'].value);
-    data.append('phonenum', register_form.elements['phonenum'].value);
-    data.append('address', register_form.elements['address'].value);
-    data.append('pincode', register_form.elements['pincode'].value);
-    data.append('dob', register_form.elements['dob'].value);
-    data.append('pass', register_form.elements['pass'].value);
-    data.append('cpass', register_form.elements['cpass'].value);
-    data.append('profile', register_form.elements['profile'].files[0]);
-    data.append('register', '1'); 
+        data.append('name', register_form.elements['name'].value);
+        data.append('email', register_form.elements['email'].value);
+        data.append('phonenum', register_form.elements['phonenum'].value);
+        data.append('address', register_form.elements['address'].value);
+        data.append('pincode', register_form.elements['pincode'].value);
+        data.append('dob', register_form.elements['dob'].value);
+        data.append('pass', register_form.elements['pass'].value);
+        data.append('cpass', register_form.elements['cpass'].value);
+        data.append('profile', register_form.elements['profile'].files[0]);
+        data.append('register', '1'); 
 
-    for (let [key, value] of data.entries()) {
-        console.log(`${key}:`, value);
-    }
-
-    var myModal = document.getElementById('registerModal');
-    var modal = bootstrap.Modal.getInstance(myModal);
-    modal.hide();
-
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "ajax/login_register.php", true);
-
-    xhr.onload = function () {
-        console.log("Server response:", this.responseText); 
-
-        if (this.responseText.trim() === 'pass_mismatch') {
-            alert('error', "Password Mismatched!");
-        } else if (this.responseText.trim() === 'email_already') {
-            alert('error', "Email is already registered!");
-        } else if (this.responseText.trim() === 'phone_already') {
-            alert('error', "Phone Number is already registered!");
-        } else if (this.responseText.trim() === 'inv_img') {  
-            alert('error', "Only JPG, WEBP, PNG Images are allowed!");
-        } else if (this.responseText.trim() === 'upd_failed') {
-            alert('error', "Image Upload Failed!");
-        } else if (this.responseText.trim() === 'mail_failed') {
-            alert('error', "Cannot send confirmation mail! Server down!");
-        } else if (this.responseText.trim().startsWith('ins_failed')) {
-            alert('error', "Registration failed! Server down! " + this.responseText);
-        } else if (this.responseText.trim() === '1') {
-            alert('success', "Registration successful. Confirmation link sent to email!");
-            register_form.reset();
-        } else {
-            alert('error', "Unexpected response: " + this.responseText);
+        for (let [key, value] of data.entries()) {
+            console.log(`${key}:`, value);
         }
-    };
 
-    xhr.onerror = function () {
-        console.error("AJAX request failed");
-        alert('error', "Something went wrong during registration request.");
-    };
+        var myModal = document.getElementById('registerModal');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
 
-    xhr.send(data);
-});
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/login_register.php", true);
 
+        xhr.onload = function () {
+            console.log("Server response:", this.responseText); 
+
+            if (this.responseText.trim() === 'pass_mismatch') {
+                alert('error', "Password Mismatched!");
+            } else if (this.responseText.trim() === 'email_already') {
+                alert('error', "Email is already registered!");
+            } else if (this.responseText.trim() === 'phone_already') {
+                alert('error', "Phone Number is already registered!");
+            } else if (this.responseText.trim() === 'inv_img') { 
+                alert('error', "Only JPG, WEBP, PNG Images are allowed!");
+            } else if (this.responseText.trim() === 'upd_failed') {
+                alert('error', "Image Upload Failed!");
+            } else if (this.responseText.trim() === 'mail_failed') {
+                alert('error', "Cannot send confirmation mail! Server down!");
+            } else if (this.responseText.trim().startsWith('ins_failed')) {
+                alert('error', "Registration failed! Server down! " + this.responseText);
+            } else if (this.responseText.trim() === '1') {
+                alert('success', "Registration successful. Confirmation link sent to email!");
+                register_form.reset();
+            } else {
+                alert('error', "Unexpected response: " + this.responseText);
+            }
+        };
+
+        xhr.onerror = function () {
+            console.error("AJAX request failed");
+            alert('error', "Something went wrong during registration request.");
+        };
+
+        xhr.send(data);
+    });
+
+
+    let login_form = document.getElementById('login-form');
+
+    login_form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let data = new FormData();
+
+        data.append('email_mob', login_form.elements['email_mob'].value);   
+        data.append('pass', login_form.elements['pass'].value);
+        data.append('login', '');  
+        
+        for (let [key, value] of data.entries()) {
+            console.log(`${key}:`, value);
+        }
+
+        var myModal = document.getElementById('loginModal');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/login_register.php", true);
+
+        xhr.onload = function () {
+            if (this.responseText == 'inv_email_mob') {
+                alert('error', "Invalid Email or Mobile Number! ");
+            } 
+            
+            else if (this.responseText == 'not_verified') {
+                alert('error', "Email is not verified! ");
+            } 
+            else if (this.responseText == 'inactive') {  
+                alert('error', "Account Suspended! Please contact Admin.!");
+            } 
+            else if (this.responseText == 'inv_pass') {
+                alert('error', "Incorrect Password!");
+            }
+            else {
+                window.location = window.location.pathname;
+            }
+        }
+
+        
+        xhr.send(data);
+    });
+
+
+    let forgot_form = document.getElementById('forgot-form');
+
+    forgot_form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        let data = new FormData();
+        data.append('email', forgot_form.elements['email'].value);  
+        data.append('forgot_pass', '');
+
+        var myModal = document.getElementById('forgotModal');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/login_register.php", true);
+
+        xhr.onload = function () {
+            if (this.responseText == 'inv_email') {
+                alert('error', "Invalid Email!");
+            } else if (this.responseText == 'not_verified') {
+                alert('error', "Email is not verified! Please contact Admin.");
+            } else if (this.responseText == 'inactive') {
+                alert('error', "Account Suspended! Please contact Admin.");
+            } else if (this.responseText == 'mail_failed') {
+                alert('error', "Cannot send email. Server Down!");
+            } else if (this.responseText == 'upd_failed') {
+                alert('error', "Account recovery failed. Server Down!");
+            } else {
+                alert('success', "Reset link sent to email!");
+                forgot_form.reset();
+            }
+        }
+
+        xhr.send(data);
+    });
 
     setActive();
 </script>
