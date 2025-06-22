@@ -25,7 +25,7 @@
                     <iframe class="w-100 rounded mb-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117711.79652321864!2d86.09336889558041!3d22.784165518854753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f5e31989f0e2b5%3A0xeeec8e81ce9b344!2sJamshedpur%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1749109966243!5m2!1sen!2sin" height="320" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <h5>Address</h5>
                     <a href="https://maps.app.goo.gl/zrGTS44hNgUrE9ke9" target="blank" class="d-inline-block text-decoration-none text-dark" mb-4>
-                        <i class="bi bi-geo-alt-fill"></i> XYZ, Prayagraj, Uttar Pradesh
+                        <i class="bi bi-geo-alt-fill"></i> Sakchi, Jamshedpur, Jharkhand 831001
                     </a>
 
                     <!-- CALL US -->

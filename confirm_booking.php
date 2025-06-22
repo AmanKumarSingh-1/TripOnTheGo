@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require('inc/links.php'); ?>
-    <title><?php echo $settings_r['site_title'] ?> - CONFIRM BOOKING</title>
+    <title><?php echo $settings_r['site_title'] ?> - Confirm Booking</title>
 </head>
 
 <body class="bg-light">
     <?php require('inc/header.php'); ?>
 
     <?php 
-    /*
-        Check if the room ID is set in the URL.
-        Shutdown mode is active or not
-        User is logged in or not
-    */
         if(!isset($_GET['room_id']) || $settings_r['shutdown'] == true){
             redirect('rooms.php');
         }
@@ -23,14 +18,11 @@
             redirect('rooms.php');
         }
 
-        // filter and get room and user data
-
         $data = filteration($_GET);
         $room_res = select("SELECT * FROM `rooms` WHERE `id`=? AND `status`=? AND `removed`=?", [$data['room_id'],1,0],'iii');
 
-
         if(mysqli_num_rows($room_res)==0){
-            redirect('confirm_booking.php');
+            redirect('rooms.php');
         }
         $room_data=mysqli_fetch_assoc($room_res);
 
@@ -48,15 +40,14 @@
 
     <div class="container">
         <div class="row">
-
             <div class="col-12 my-5 mb-4 px-4">
                 <h2 class="fw-bold">CONFIRM BOOKING</h2>
                 <div style="font: size 14px;">
                     <a href="index.php" class="text-secondary text-decoration-none">HOME</a>
                     <span class="text-secondary"> > </span>
-                    <a href="rooms.php" class="text-secondary text-decoration-none" >ROOMS</a>
+                    <a href="rooms.php" class="text-secondary text-decoration-none">ROOMS</a>
                     <span class="text-secondary"> > </span>
-                    <a href="rooms.php" class="text-secondary text-decoration-none" >CONFIRM</a>
+                    <a href="rooms.php" class="text-secondary text-decoration-none">CONFIRM</a>
                 </div>
             </div>   
                 
@@ -82,7 +73,7 @@
             <div class="col-lg-5 col-md-12 px-4">
                 <div class="card mb-4 border-0 shadow-sm rounded-3">
                     <div class="card-body">
-                        <form action="#" id="booking_form">
+                        <form action="pay_now.php" method="POST" id="booking_form">
                             <h6 class="mb-3">BOOKING DETAILS</h6>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
@@ -110,14 +101,13 @@
                                         <span class="visually-hidden">Loading...</span>
                                     </div>
                                     <h6 class="mb-3 text-danger" id="pay_info">Provide check-in & check-out date!</h6>
-                                    <button name="pay_now" class="btn w-100 text-white custom-bg shadow-none mb-1 disabled">Pay Now</button>
+                                    <button name="pay_now" class="btn w-100 text-white custom-bg shadow-none mb-1 disabled">Confirm Booking</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -135,7 +125,7 @@
 
             booking_form.elements['pay_now'].setAttribute('disabled', true);
 
-            if( checkin_val != '' && checkout_val != '') {
+            if(checkin_val != '' && checkout_val != '') {
                 pay_info.classList.add('d-none');
                 pay_info.classList.replace('text-dark', 'text-danger');
                 info_loader.classList.remove('d-none');
@@ -148,7 +138,7 @@
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "ajax/confirm_booking.php", true);
 
-                xhr.onload = function () {
+                xhr.onload = function() {
                     let data = JSON.parse(this.responseText);
                     if(data.status == 'check_in_out_equal') {
                         pay_info.innerText = "Check-in and Check-out dates cannot be the same!";
@@ -163,19 +153,18 @@
                         pay_info.innerText = "Room is not available for the selected dates!";
                     }
                     else {
-                        pay_info.innerHTML = "No. of Days: "+data.days+"<br>Total amount to Pay: ₹"+data.payment;
+                        pay_info.innerHTML = "No. of Days: "+data.days+"<br>Total amount: ₹"+data.payment;
                         pay_info.classList.replace('text-danger', 'text-dark');
                         booking_form.elements['pay_now'].removeAttribute('disabled');
                     }
                     pay_info.classList.remove('d-none');
                     info_loader.classList.add('d-none');
+                    pay_now.classList.remove('disabled');
                 }
                 
                 xhr.send(data);
             }
         }
     </script>
-
 </body>
-
 </html>

@@ -39,6 +39,9 @@
     define('SENDGRID_EMAIL', "gauravsinha944@gmail.com");
     define('SENDGRID_NAME', "TripOnTheGo");
 
+    // possible "booking status" values in db = pending, booked, payment failed, cancelled
+    // to configure paytm gateway check file inc/paytm/config_paytm.php
+
 
     function adminLogin() {
         session_start();

@@ -30,7 +30,7 @@
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
                 <h3 class="mb-3">Lorem ipsum dolor sit.</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur illum similique magnam repudiandae deserunt ad at.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur illum similique magnam repudiandae deserunt ad at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit exercitationem magnam repellendus. Numquam nisi quis ipsam, ab expedita fugit nostrum officiis obcaecati, distinctio exercitationem amet eius cumque corporis veritatis, officia possimus? Cupiditate itaque, repellat accusamus dolore quae fuga deleniti eligendi vel, nisi veritatis dolorum. Nostrum quae voluptates officiis? Culpa, aut.</p>
             </div>
             <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
                 <img src="images/about/about.jpg" class="w-100">
