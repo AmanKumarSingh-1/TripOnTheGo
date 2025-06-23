@@ -39,7 +39,7 @@
                 }
             }
 
-            xhr.send('get_general')
+            xhr.send('get_general');
         }
 
         general_s_form.addEventListener('submit',function(e){

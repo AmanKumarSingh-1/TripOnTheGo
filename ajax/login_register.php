@@ -72,7 +72,8 @@ if (isset($_POST['register'])) {
     if ($img == 'inv_img') {
         echo 'inv_img';
         exit;
-    } elseif ($img == 'upd_failed') {
+    } 
+    else if ($img == 'upd_failed') {
         echo 'upd_failed';
         exit;
     }

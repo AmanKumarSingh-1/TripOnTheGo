@@ -4,6 +4,7 @@ require(__DIR__ . "/../admin/inc/db_config.php");
 require(__DIR__ . "/../admin/inc/essentials.php");
 
 date_default_timezone_set("Asia/Kolkata");
+session_start();
 
 if(isset($_POST['check_availability'])) {
     $frm_data = filteration($_POST);
@@ -35,10 +36,22 @@ if(isset($_POST['check_availability'])) {
         echo $result;
     }
     else {
-        session_start();
-        $_SESSION['room'];
-
         // run query to check if the room is available for the given dates
+        $tb_query = "SELECT COUNT(*) AS `total_bookings` FROM `booking_order` WHERE booking_status=? AND room_id=? AND check_out > ? AND check_in < ?";
+
+        $values = ['booked', $_SESSION['room']['id'], $frm_data['check_in'], $frm_data['check_out']];
+
+        $tb_fetch = mysqli_fetch_assoc(select($tb_query, $values, 'siss'));
+
+        $rq_result = select("SELECT `quantity` FROM `rooms` WHERE `id`=?", [$_SESSION['room']['id']], 'i');
+        $rq_fetch = mysqli_fetch_assoc($rq_result);
+
+        if($rq_fetch['quantity']- $tb_fetch['total_bookings'] <= 0) {
+            $status = 'unavailable';
+            $result = json_encode(['status'=>$status]);
+            echo $result;
+            exit;
+        }
 
         $count_days = date_diff($checkin_date, $checkout_date)->days;
         $payment = $_SESSION['room']['price'] * $count_days;

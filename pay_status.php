@@ -45,11 +45,11 @@
                             <i class="bi bi-check-circle-fill text-success fs-1 mb-3"></i>
                             <h3 class="fw-bold mb-3">Booking Confirmed!</h3>
                             <p class="mb-2"><strong>Order ID:</strong> $booking_fetch[order_id]</p>
-                            <p class="mb-2"><strong>Hotel:</strong> $booking_fetch[room_name]</p>
+                            <p class="mb-2"><strong>Room:</strong> $booking_fetch[room_name]</p>
                             <p class="mb-2"><strong>Check-in:</strong> $booking_fetch[check_in]</p>
                             <p class="mb-2"><strong>Check-out:</strong> $booking_fetch[check_out]</p>
                             <p class="mb-4"><strong>Amount:</strong> ₹$booking_fetch[total_pay]</p>
-                            <a href='booking.php' class='btn btn-primary'>View My Bookings</a>
+                            <a href='bookings.php' class='btn btn-primary'>View My Bookings</a>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                             <i class="bi bi-x-circle-fill"></i>
                             Booking Failed! $booking_fetch[trans_resp_msg]
                             </br></br>
-                            <a href='booking.php'>Go to Bookings</a>
+                            <a href='bookings.php'>Go to Bookings</a>
                         </p>
                     </div>
                 </div>
