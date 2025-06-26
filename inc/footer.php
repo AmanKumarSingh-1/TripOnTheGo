@@ -1,31 +1,48 @@
-<div class="container-fluid bg-white mt-5 shadow" style="border: 1px solid black;">
-    <div class="row">
-        <div class="col-lg-4 mt-3">
-            <h3 class="h-font fw-bold fs-3 mb-2"><?php echo $settings_r['site_title'] ?></h3>
-            <p>
+<div class="container-fluid bg-dark text-white mt-5 py-3 border-top border-teal">
+    <div class="row align-items-start">
+        <!-- Brand Column -->
+        <div class="col-lg-4 mb-3 mb-lg-0">
+            <h3 class="h-font fw-bold fs-4 mb-2 text-white"><?php echo $settings_r['site_title'] ?></h3>
+            <p class="small text-muted">
                 <?php echo $settings_r['site_about'] ?>
             </p>
         </div>
-        <div class="col-lg-4 mt-3">
-            <h5 class="mb-3">Links</h5>
-            <a href="index.php" class="d-inline-block mb-2 text-dark text-decoration-none">Home</a><br>
-            <a href="rooms.php" class="d-inline-block mb-2 text-dark text-decoration-none">Rooms</a><br>
-            <a href="facilities.php" class="d-inline-block mb-2 text-dark text-decoration-none">Facilities</a><br>
-            <a href="contact.php" class="d-inline-block mb-2 text-dark text-decoration-none">Contact us</a><br>
-            <a href="about.php" class="d-inline-block mb-2 text-dark text-decoration-none">About</a>
+        
+        <!-- Links Column -->
+        <div class="col-lg-4 mb-3 mb-lg-0">
+            <h5 class="text-teal mb-2 fs-5">Links</h5>
+            <div class="d-flex flex-column">
+                <a href="index.php" class="text-white-50 mb-1 text-decoration-none hover-text-teal">Home</a>
+                <a href="rooms.php" class="text-white-50 mb-1 text-decoration-none hover-text-teal">Rooms</a>
+                <a href="facilities.php" class="text-white-50 mb-1 text-decoration-none hover-text-teal">Facilities</a>
+                <a href="contact.php" class="text-white-50 mb-1 text-decoration-none hover-text-teal">Contact us</a>
+                <a href="about.php" class="text-white-50 text-decoration-none hover-text-teal">About</a>
+            </div>
         </div>
-        <div class="col-lg-4 mt-3">
-            <h5 class="mb-3">Follow us</h5>
-            <?php
-            if ($contact_r['facebook'] != '') {
-                echo <<<data
-                <a class="d-inline-block mb-2 text-dark text-decoration-none" href="$contact_r[facebook]"> <i class="bi bi-facebook"></i> Facebook</a>
-                data;
-            }
-            ?>
-            <br>
-            <a class="d-inline-block mb-2 text-dark text-decoration-none" href="<?php echo $contact_r['facebook'] ?>"> <i class="bi bi-instagram"></i> Instagram</a><br>
-            <a class="d-inline-block text-dark text-decoration-none" href="<?php echo $contact_r['twitter'] ?>"> <i class="bi bi-twitter-x"></i> <i class="bi bi-twitter-x"></i> Twitter</a><br>
+        
+        <!-- Social Column -->
+        <div class="col-lg-4">
+            <h5 class="text-teal mb-2 fs-5">Follow us</h5>
+            <div class="d-flex flex-column">
+                <?php if ($contact_r['facebook'] != ''): ?>
+                    <a href="<?php echo $contact_r['facebook'] ?>" class="text-white-50 mb-1 text-decoration-none hover-text-teal">
+                        <i class="bi bi-facebook me-1"></i> Facebook
+                    </a>
+                <?php endif; ?>
+                <a href="<?php echo $contact_r['instagram'] ?? '#' ?>" class="text-white-50 mb-1 text-decoration-none hover-text-teal">
+                    <i class="bi bi-instagram me-1"></i> Instagram
+                </a>
+                <a href="<?php echo $contact_r['twitter'] ?>" class="text-white-50 text-decoration-none hover-text-teal">
+                    <i class="bi bi-twitter-x me-1"></i> Twitter
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Copyright -->
+    <div class="row mt-3">
+        <div class="col-12 text-center text-muted small">
+            &copy; <?php echo date('Y'); ?> <?php echo $settings_r['site_title'] ?>. All rights reserved.
         </div>
     </div>
 </div>
