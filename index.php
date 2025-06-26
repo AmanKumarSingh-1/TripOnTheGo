@@ -360,7 +360,7 @@
                         <span class="badge bg-light text-dark fs-6 p-2"><i class="bi bi-instagram"></i> Instagram</span>
                     </a><br>
                     <a href="<?php echo $contact_r['twitter'] ?>" class="d-inline-block">
-                        <span class="badge bg-light text-dark fs-6 p-2"><i class="bi bi-twitter-x"></i> <i class="bi bi-twitter-x"></i> Twitter</span>
+                        <span class="badge bg-light text-dark fs-6 p-2"><i class="bi bi-twitter-x"></i> Twitter</span>
                     </a><br>
                 </div>
             </div>
