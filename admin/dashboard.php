@@ -1,5 +1,6 @@
 <?php
 require("inc/essentials.php");
+require("inc/db_config.php");
 adminLogin();
 ?>
 
@@ -14,17 +15,201 @@ adminLogin();
 </head>
 
 <body class="bg-light">
-    <?php require('inc/header.php'); ?>
+    <?php 
+    
+    require('inc/header.php'); 
+    
+    $is_shutdown = mysqli_fetch_assoc(mysqli_query($con,"SELECT `shutdown` FROM `settings`"));
 
-   <div class="container-fluid" id="main-content">
-    <div class="row">
-        <div class="col-lg-10 ms-auto p-4 overflow-hidden">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore perferendis, similique veritatis ipsam cum quisquam soluta est asperiores cumque, quia id animi quo nisi illo ipsa consequuntur ut esse. Soluta eaque unde, itaque error illo, pariatur hic, consequatur nesciunt fuga quidem at. Quisquam suscipit ipsam fugiat dolorem, impedit sint! Deleniti, atque similique totam at rem eum error sunt. Illum assumenda, beatae repellat quidem autem neque dolor debitis molestiae alias reiciendis similique nostrum quisquam aliquam animi. Pariatur eos perspiciatis est doloremque neque numquam ex, et illum voluptatum quos dicta itaque ab deleniti asperiores velit assumenda praesentium eligendi possimus! Qui quisquam laborum fugit cupiditate maxime officia, officiis ab repellat magni dicta tenetur, porro debitis adipisci fugiat vero harum quam ex, non nobis accusamus! Animi eius odio iure officiis sed, soluta architecto voluptatem temporibus provident enim corrupti qui quam harum ullam nisi facere alias! Alias, repudiandae exercitationem delectus facilis voluptatibus saepe animi suscipit praesentium voluptatem odio, cumque tenetur eaque! At labore consectetur aspernatur maxime adipisci ipsam, unde illum dignissimos ea eius corrupti cumque molestias deleniti sed optio, iste natus. Consectetur enim autem minus dolore labore excepturi eos, cupiditate, fugiat minima distinctio iusto libero architecto unde nihil natus quae quas alias numquam laboriosam expedita, corrupti harum odit nisi molestiae! Temporibus nulla alias error, recusandae soluta asperiores non eum eveniet et aut molestias sed ipsa dolorum odit. Itaque at est fugit quidem dignissimos molestiae. Quaerat asperiores minima nihil, rem numquam dicta non consequuntur accusantium molestias harum cum obcaecati nulla debitis hic molestiae pariatur qui eveniet dolore? Officiis, enim ut quisquam exercitationem, doloribus, voluptates mollitia amet hic minus corporis doloremque? Necessitatibus ipsam omnis fuga facere eos quod aut. Architecto aspernatur totam dicta perspiciatis! Dolor deserunt hic voluptatem eum nesciunt nam ipsum, quibusdam dicta eos quo quaerat dolores! Minima explicabo eius, dolorem velit expedita beatae cupiditate porro mollitia! Mollitia sapiente incidunt voluptatem, tempora quos, assumenda hic asperiores et at expedita corporis, unde ratione? Facilis at non sit beatae voluptatum, dicta asperiores eveniet fugit accusamus commodi consectetur ratione ipsum aperiam veniam ab, modi vel maxime sunt temporibus dolorum ullam vitae culpa sed. Exercitationem sint alias esse, inventore a optio? Unde reprehenderit soluta quis et molestiae, beatae suscipit facilis nam atque expedita? Fugiat a quasi natus recusandae harum architecto labore dicta mollitia deserunt dolorem cum, reiciendis dolorum accusamus quisquam quod obcaecati fuga distinctio quo blanditiis commodi quos. Pariatur dolorum dolore mollitia accusamus est necessitatibus eveniet rem doloremque rerum placeat et cum recusandae ipsa natus perspiciatis ducimus dolores sapiente, optio explicabo saepe tempore sequi. Iure, aliquid nostrum! Repellendus ipsam tempore adipisci labore odit. Enim ipsam debitis magni quisquam tenetur quidem quos libero molestias ea quod? Eaque, illum. Quaerat, atque nobis. Eum, possimus? Cum exercitationem dicta vitae quo aliquam debitis explicabo vel ex, minima animi culpa laudantium. Exercitationem maiores quam blanditiis porro sapiente possimus, quos voluptas voluptates nostrum, mollitia velit doloribus. Voluptas soluta hic velit maiores perferendis expedita assumenda. Eveniet veniam hic maxime sunt natus explicabo, commodi, quaerat aut, molestias iste quis id minima earum porro facilis iure magnam eaque corrupti molestiae ea et perspiciatis excepturi. Voluptate, architecto consectetur. Sunt dicta similique quos cum sit! Unde, dignissimos. Quo necessitatibus placeat voluptate tempora sed minus amet assumenda velit aliquam quis dolor eligendi perspiciatis dolore, veniam libero. Atque, molestias, eligendi asperiores nam dolor similique et assumenda nihil repellendus dolorum culpa? Fugiat atque enim est? Itaque illo saepe illum nesciunt. Aspernatur aliquam totam, inventore ipsum eos incidunt nam, suscipit minus harum voluptas, omnis in amet veritatis eius illum consectetur dolores distinctio nulla quas! Perspiciatis fugit nobis exercitationem. Cumque suscipit, harum nesciunt minima repudiandae optio quae corporis! Velit non dicta ex atque quos. Maxime asperiores illo repudiandae id, rem ullam beatae iure incidunt sunt cupiditate velit sapiente molestiae labore pariatur laboriosam ipsa! Ipsa eum suscipit cumque facere itaque deserunt deleniti quos, optio molestias, eligendi neque. Cupiditate unde dignissimos velit at laborum officiis distinctio facere nostrum cum sunt vel, non maiores quis ad molestias veritatis voluptatibus rerum delectus iusto sed aliquid illum. Placeat cum impedit veritatis labore exercitationem! Temporibus, iste labore sed totam harum exercitationem pariatur doloremque perferendis sit ab non, esse et, architecto excepturi! Officiis, ducimus facilis. Possimus, autem! Recusandae sed ad aut veritatis error possimus non deserunt debitis asperiores, iste voluptatibus voluptatum amet molestiae quia laudantium placeat, numquam ipsam veniam! Laborum accusantium at inventore praesentium autem eligendi, deleniti culpa eum voluptate ipsum, consequatur facilis repellendus possimus maxime necessitatibus! Voluptatum soluta delectus ea impedit ducimus iste odio doloremque fuga commodi, minus blanditiis officia! At aliquid adipisci tenetur sunt aspernatur, corrupti quasi debitis harum! Illum nemo libero, quisquam mollitia quia numquam consequuntur deleniti minima, ipsum blanditiis repellendus maiores provident incidunt voluptatum. Beatae asperiores atque saepe quis aliquid dignissimos qui dolore nesciunt magnam quo aspernatur quam enim vero deleniti architecto repudiandae, error ut accusantium? Voluptates dolor, vitae temporibus nam quia ea explicabo dignissimos soluta suscipit? Quaerat unde commodi dicta aliquam sit. Asperiores sint dolores dolore. Explicabo minus, ex fuga deleniti quas corporis alias, assumenda vel hic amet doloribus unde quo veniam consectetur. Quidem nulla sunt expedita, rerum, id nesciunt, labore provident et nihil voluptates dignissimos harum soluta sapiente debitis alias. Ex ipsum, optio nostrum voluptatum voluptatibus officiis, adipisci odit quod ad, iure accusantium sunt blanditiis vitae repellat nemo nobis! Nihil ea dolore pariatur veritatis, modi dolores mollitia, commodi, exercitationem optio sit aliquid suscipit ipsam corrupti est necessitatibus praesentium corporis unde facilis rerum quo quis. Earum laboriosam modi saepe nihil repellendus placeat impedit excepturi ea officia alias. Voluptates vel eos beatae totam, id quidem illo, rerum aspernatur fugiat voluptatibus reprehenderit similique eum debitis? Cumque iusto, voluptate harum amet maiores quod deleniti cum dolorem nisi necessitatibus molestias ullam error nobis reprehenderit itaque enim, dolorum fugit! Inventore quis corrupti dolore facilis ea, libero, architecto nemo neque officiis iusto quibusdam id perspiciatis, molestias obcaecati tempore sapiente omnis excepturi temporibus accusamus. Pariatur rem voluptatibus, veniam provident officiis dolore consequuntur beatae officia natus id veritatis voluptate ex, adipisci tempora! Fugit, voluptate corrupti accusantium ipsum id repellat dolorem debitis molestias praesentium non eligendi doloremque odio ex voluptas hic quod porro. Earum cumque animi, minus numquam nam vel aliquam unde consequatur enim laboriosam possimus iure distinctio delectus explicabo hic placeat fugiat officia? Doloremque excepturi laborum perferendis necessitatibus saepe cum autem obcaecati tenetur suscipit minima vero incidunt nesciunt mollitia possimus voluptatum dignissimos amet, magnam aliquam dolorem et ullam! Aspernatur cum voluptatem reiciendis beatae? Itaque, nesciunt facere. Dolor officia blanditiis aspernatur fugiat deserunt non. Obcaecati, culpa repudiandae minima reprehenderit ullam placeat quis iste similique ut est nulla quo facilis maxime, molestias doloribus cupiditate quia nihil unde nam natus. Necessitatibus, vel culpa. Perferendis, ipsum. Sequi possimus ipsam modi. Delectus perferendis sequi doloribus nemo corrupti sapiente alias aspernatur odit? Voluptates iure nemo, corporis minus dolorem ut rerum eum nostrum libero reprehenderit tenetur fugiat fugit mollitia porro, quod eveniet laudantium explicabo delectus numquam saepe aspernatur illo quidem. Tempora incidunt animi in, vero eveniet nesciunt maxime aperiam blanditiis accusantium, voluptate non molestias! Dolores delectus vel dolorum ducimus a odio, atque architecto facere officia autem laudantium explicabo tempore optio quos nesciunt provident nemo consequatur expedita suscipit obcaecati ex assumenda eaque aperiam. Ipsa suscipit veritatis minus cupiditate ullam veniam blanditiis nemo corporis. Nihil voluptatibus id, exercitationem quis tempora ullam, cumque obcaecati aliquam odio ipsum optio accusamus delectus dolorum facere vero at labore praesentium sed hic. Asperiores eligendi unde quibusdam nesciunt ex modi molestiae qui perferendis omnis placeat rem tempore ad voluptas reiciendis maiores incidunt eveniet in assumenda non, animi dolorem? Aliquam dolores, corporis illum accusantium modi neque inventore quo eligendi amet sequi libero, natus nulla, laborum adipisci expedita. Error, amet! Accusantium numquam aliquid nam rem laboriosam dicta consequuntur a omnis, reiciendis architecto doloribus esse praesentium dignissimos rerum sint, est, perferendis explicabo. Odit itaque corporis eius suscipit quasi ullam libero culpa modi expedita a! Molestiae eveniet odio magni cumque. Voluptatum, culpa modi deserunt omnis ea nam velit tempore quae reprehenderit earum non porro error aperiam quasi officia est sed perferendis numquam eos amet eaque cupiditate incidunt tenetur. At inventore ullam atque quibusdam accusantium, obcaecati dolores fugit provident consequatur veniam pariatur, aliquam commodi consectetur eveniet in porro dolorum molestias perferendis possimus odio ea facere impedit. Nostrum accusamus nemo temporibus, quas labore illo deleniti aliquid molestias omnis in fugit aut? Nulla quidem hic perferendis maxime labore aliquam expedita tempora repellendus iste cumque culpa harum ratione ullam, nesciunt qui reiciendis obcaecati fugit, ad dolorum accusantium? Laborum laboriosam, repellat porro nisi accusamus vero voluptatibus vel dolores praesentium, earum saepe possimus itaque ipsa fuga, quasi facere. Nesciunt a, in perferendis veritatis, numquam aliquam, porro culpa magnam assumenda neque itaque? Quas qui voluptatem praesentium ducimus sed minus perferendis temporibus laboriosam aperiam architecto voluptatum sunt aliquid, modi doloribus odio minima repudiandae accusantium odit nam quo ut provident optio eligendi nesciunt. Qui adipisci rem quidem reprehenderit possimus voluptas magnam, ad placeat exercitationem animi vitae distinctio libero labore culpa a, voluptates nemo ipsa officia. Blanditiis ratione rerum consectetur numquam mollitia ipsum consequatur eveniet laborum tenetur voluptatem ut minima accusantium, quas labore nemo incidunt optio, libero neque, tempora voluptatibus magnam rem quidem! Aperiam dolor accusantium nobis temporibus expedita omnis numquam deleniti nihil at! Voluptatibus atque error laboriosam illo consequatur neque eius, maxime corrupti. Mollitia amet maiores beatae quod cum officiis quis nostrum. Qui nesciunt quaerat cumque laborum, molestias alias sint minima saepe corrupti ipsum mollitia consequatur iste dicta delectus consectetur voluptate soluta vel veniam architecto dolor. Non beatae corporis itaque iste ducimus officia harum eveniet nulla libero esse ex cum modi, doloribus cupiditate ut similique? Quaerat tempore voluptas temporibus aut officia incidunt vel voluptatibus ipsum ex esse quo, adipisci, dolorum fugit, ipsa nobis id dicta eligendi! Nemo, modi maiores consequatur nobis possimus ullam corporis debitis accusantium cum cumque architecto omnis molestiae necessitatibus vel blanditiis placeat! Modi sunt laborum atque sed non suscipit omnis quis ea natus error! Incidunt atque eveniet ab nostrum asperiores, tempore, voluptatum iure vero modi magnam id facilis consequuntur obcaecati quis, maxime sint. Temporibus eius numquam aliquam libero expedita laboriosam alias? Natus odit adipisci ea totam nam aut labore culpa quam praesentium, incidunt nobis eaque tenetur excepturi doloremque alias officiis voluptas rerum perferendis tempore? Magnam nam facere consequatur amet voluptate, incidunt asperiores non ad hic libero possimus porro unde quibusdam! Possimus nesciunt, at ducimus libero veritatis fuga neque esse inventore odio adipisci est voluptatum iusto ipsa quis molestias eos accusamus voluptatibus veniam quo architecto tenetur. Animi error eum tenetur accusamus obcaecati expedita quasi eveniet. Voluptatibus excepturi nulla a nobis, veritatis totam quis rem doloremque neque repellendus recusandae expedita blanditiis facere libero nostrum, tempore assumenda soluta, ex praesentium cum enim. Odio dolor maxime dolores incidunt libero sint dolorum nesciunt facere ad illo consequuntur adipisci labore quas sequi, consectetur dicta rem quam cumque ratione aliquam pariatur quo. Repudiandae incidunt non nihil praesentium provident vel voluptatibus? Error molestiae voluptates iusto saepe quisquam repudiandae eligendi dolor perferendis qui molestias amet nobis tempora praesentium laudantium consectetur, dignissimos voluptatibus voluptatum debitis labore fugit id. At excepturi, provident beatae non deleniti expedita necessitatibus corporis corrupti? Itaque culpa exercitationem officia obcaecati accusamus earum natus quas quod velit repudiandae, officiis voluptate et excepturi omnis, quasi praesentium? Animi eligendi facilis quia expedita architecto dolor quibusdam corrupti quos blanditiis, est provident nostrum laborum obcaecati voluptas commodi esse perferendis sunt, vero accusantium error reprehenderit dignissimos? Sed aperiam ipsam pariatur odio tempore, quidem vitae consectetur doloremque nemo repudiandae sequi dolore maiores officiis necessitatibus, est atque accusamus ab harum mollitia at. Numquam adipisci velit soluta repellendus, sed commodi assumenda. Eveniet vel consectetur nemo nobis quod repellendus alias vero deserunt vitae voluptas odit, quaerat accusantium tempora iste ullam? Ipsa veritatis ab, quasi delectus pariatur provident nulla alias perspiciatis doloribus nam cum corporis at dolore, aliquam doloremque? Tenetur eaque temporibus enim mollitia ea excepturi veniam, asperiores molestias at quibusdam suscipit non magni exercitationem odio. Numquam deleniti dolore qui omnis quasi dolorum maiores animi officiis hic fuga perferendis et quam, nulla ducimus quisquam obcaecati quidem veritatis esse corrupti. Adipisci perspiciatis necessitatibus unde illum perferendis, eum culpa dolorum possimus incidunt molestias omnis reiciendis beatae, tenetur, odit nulla minima quibusdam deserunt! Accusamus iusto aliquid neque quia officiis incidunt rerum sed consectetur blanditiis voluptas, earum, perferendis repellat amet suscipit odit? Nemo?
+    $current_bookings = mysqli_fetch_assoc(mysqli_query($con, "
+    SELECT
+        COUNT(CASE WHEN booking_status = 'booked' AND arrival = 0 THEN 1 END) AS `new_bookings`,
+        COUNT(CASE WHEN booking_status = 'cancelled' THEN 1 END) AS `cancelled_bookings`
+    FROM `booking_order`
+    "));
+
+    $unread_queries = mysqli_fetch_assoc(mysqli_query($con,"SELECT COUNT(sr_no) AS `count`
+    FROM `user_queries` WHERE `seen`=0"));
+
+    $unread_reviews = mysqli_fetch_assoc(mysqli_query($con,"SELECT COUNT(sr_no) AS `count`
+    FROM `rating_review` WHERE `seen`=0"));
+
+    $current_users = mysqli_fetch_assoc(mysqli_query($con, "
+    SELECT
+        COUNT(ID) AS `total`,
+        COUNT(CASE WHEN `status` = 1 THEN 1 END) AS `active`,
+        COUNT(CASE WHEN `status` = 0 THEN 1 END) AS `inactive`,
+        COUNT(CASE WHEN `is_verified` = 0 THEN 1 END) AS `unverified`
+    FROM `user_cred`
+    "));
+
+    ?>
+
+    <div class="container-fluid" id="main-content">
+        <div class="row">
+            <div class="col-lg-10 ms-auto p-4 overflow-hidden">
+
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h3>DASHBOARD</h3>
+                    <?php
+                        if($is_shutdown['shutdown']){
+                            echo<<<data
+                            <h6 class="badge bg-danger py-2 px-3 rounded">Shutdown Mode is Active!</h6>
+                            data;
+                        }                   
+
+                    ?>
+                    
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-3 mb-4">
+                        <a href="new_bookings.php" class="text-decoration-none">
+                            <div class="card text-center text-success p-3">
+                                <h6>New Bookings</h6>
+                                <h1 class="mt-2 mb-0"><?php echo $current_bookings['new_bookings'] ?></h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <a href="user_queries.php" class="text-decoration-none">
+                            <div class="card text-center text-info p-3">
+                                <h6>User Queries</h6>
+                                <h1 class="mt-2 mb-0"><?php echo $unread_queries['count'] ?></h1>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <a href="rating_review.php" class="text-decoration-none">
+                            <div class="card text-center text-info p-3">
+                                <h6>Rating & Review</h6>
+                                <h1 class="mt-2 mb-0"><?php echo $unread_reviews['count'] ?></h1>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <!-- BOOKING ANALYTICS -->
+
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h5>Booking Analytics</h5>
+                    <select class="form-select shadow-none bg-light w-auto" onchange="booking_analytics(this.value)">
+                        <option value="1">Past 30 Days</option>
+                        <option value="2">Past 90 Days</option>
+                        <option value="3">Past 1 Year</option>
+                        <option value="4">All time</option>
+                    </select>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-primary p-3">
+                            <h6>Total Bookings</h6>
+                            <h1 class="mt-2 mb-0" id="total_bookings">0</h1>
+                            <h4 class="mt-2 mb-0" id="total_amt">₹0</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-success p-3">
+                            <h6>Active Bookings</h6>
+                            <h1 class="mt-2 mb-0" id="active_bookings">0</h1>
+                            <h4 class="mt-2 mb-0" id="active_amt">₹0</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-danger p-3">
+                            <h6>Cancelled Bookings</h6>
+                            <h1 class="mt-2 mb-0" id="cancelled_bookings">0</h1>
+                            <h4 class="mt-2 mb-0" id="cancelled_amt">₹0</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- User, Queries, Reviews Analytics-->
+
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h5>User, Queries, Reviews Analytics</h5>
+                    <select class="form-select shadow-none bg-light w-auto" onchange="user_analytics(this.value)">
+                        <option value="1">Past 30 Days</option>
+                        <option value="2">Past 90 Days</option>
+                        <option value="3">Past 1 Year</option>
+                        <option value="4">All time</option>
+                    </select>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-success p-3">
+                            <h6>New Registration</h6>
+                            <h1 class="mt-2 mb-0" id="total_new_reg">0</h1>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-primary p-3">
+                            <h6>Queries</h6>
+                            <h1 class="mt-2 mb-0" id="total_queries">0</h1>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-primary p-3">
+                            <h6>Reviews</h6>
+                            <h1 class="mt-2 mb-0" id="total_review">0</h1>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Users -->
+                <h5>Users</h5>
+                <div class="row mb-3">
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-info p-3">
+                            <h6>Total</h6>
+                            <h1 class="mt-2 mb-0"><?php echo $current_users['total']?></h1>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-success p-3">
+                            <h6>Active</h6>
+                            <h1 class="mt-2 mb-0"><?php echo $current_users['active']?></h1>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-warning p-3">
+                            <h6>Inactive</h6>
+                            <h1 class="mt-2 mb-0"><?php echo $current_users['inactive']?></h1>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 mb-4">
+                        <div class="card text-center text-danger p-3">
+                            <h6>Unverified</h6>
+                            <h1 class="mt-2 mb-0"><?php echo $current_users['unverified']?></h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-   </div>
 
-    <?php require("inc/scripts.php") ?>
+    <?php require("inc/scripts.php"); ?>
+
+    <script src="scripts/dashboard.js"></script>
+
+
 </body>
 
 </html>

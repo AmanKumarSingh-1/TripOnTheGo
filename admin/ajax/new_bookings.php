@@ -75,11 +75,11 @@
     {
         $frm_data = filteration($_POST);
         $query = "UPDATE `booking_order` bo INNER JOIN `booking_details` bd ON bo.booking_id = bd.booking_id 
-                  SET bo.arrival = ?, bd.room_no = ? WHERE bo.booking_id = ?";
+                  SET bo.arrival = ?, bo.rate_review = ?, bd.room_no = ? WHERE bo.booking_id = ?";
 
-        $values = [1, $frm_data['room_no'], $frm_data['booking_id']];
+        $values = [1, 0, $frm_data['room_no'], $frm_data['booking_id']];
 
-        $res = update($query, $values, 'isi'); // it will return 2 if successful, 0 if failed
+        $res = update($query, $values, 'iisi'); // it will return 2 if successful, 0 if failed
 
         echo ($res == 2) ? 1 : 0;
     }

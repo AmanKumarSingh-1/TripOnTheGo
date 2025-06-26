@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <?php require('inc/links.php');?>
     <title><?php echo $settings_r['site_title'] ?> - Facilities</title>
@@ -22,7 +22,7 @@
     <div class="my-5 px-4">
         <h2 class="fw-bold h-font text-center">OUR FACILITIES</h2>
         <div class="h-line bg-dark"></div>
-        <p class="text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quae, odit possimus <br> incidunt harum facilis libero vel voluptates voluptate labore nemo esse obcaecati error magni ipsum porro aliquid distinctio id?</p>
+        <p class="text-center mt-3">At Trip On The Go, we go beyond just offering rooms — we provide thoughtfully curated stays with all the comforts you need to feel at home. <br>From high-speed Wi-Fi to sparkling clean spaces, every detail is designed to help you relax, work, or explore with ease.<br> Whether you’re traveling solo, with family, or for business, comfort always comes first.</p>
     </div>
 
     <div class="container">

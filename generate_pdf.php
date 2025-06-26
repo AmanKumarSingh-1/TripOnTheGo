@@ -66,7 +66,7 @@
         if($data['booking_status'] == 'cancelled') {
             $table_data.="
                 <tr>
-                    <td style='padding: 10px; border: 1px solid #ccc;'><strong>Amount to be paid: </strong> $data[trans_amt]</td>
+                    <td style='padding: 10px; border: 1px solid #ccc;'><strong>Amount to be paid: </strong> ₹$data[trans_amt]</td>
                 </tr>
             ";
 
@@ -75,7 +75,7 @@
             $table_data.="
                 <tr>
                     <td style='padding: 10px; border: 1px solid #ccc;'><strong>Room Number: </strong> $data[room_no]</td>
-                    <td style='padding: 10px; border: 1px solid #ccc;'><strong>Amount to be paid: </strong>$data[trans_amt]</td>
+                    <td style='padding: 10px; border: 1px solid #ccc;'><strong>Amount to be paid: </strong> ₹$data[trans_amt]</td>
                 </tr>
             ";
         }

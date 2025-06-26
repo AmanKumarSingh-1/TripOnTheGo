@@ -254,10 +254,29 @@ function thumb_image(img_id, room_id) {
             room_images(room_id, document.querySelector("#room-images .modal-title").innerText);
         } else {
             alert('error', 'Thumbnail updation failed!', 'image-alert');
-            console.log("Response: ", this.responseText);
         }
     };
     xhr.send(data);
+}
+
+function remove_room(room_id) {
+    let data = new FormData();
+    if(confirm("Are you sure, you want to delete this room?")) {
+        data.append('room_id', room_id);
+        data.append('remove_room', '');
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/rooms.php", true);
+    
+        xhr.onload = function() {
+            if (this.responseText == 1) {
+                alert('success', 'Room removed!');
+                get_all_rooms();
+            } else {
+                alert('error', 'Room removal failed!', 'image-alert');
+            }
+        };
+        xhr.send(data);
+    }
 }
 
 

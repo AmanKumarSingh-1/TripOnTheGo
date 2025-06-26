@@ -421,32 +421,42 @@
 
     <?php 
     
-    if(isset($_GET['account_recovery']))
-    {
-        $data = filteration($_GET);
-        $t_date = date("Y-m-d");
-        $query = select("SELECT * FROM `user_cred` WHERE `email`=? AND `token`=? AND `t_expire`=? LIMIT 1",
-        [$data['email'].$data['token'],$t_date],'sss');
+    if(isset($_GET['account_recovery'])) {
+    $data = filteration($_GET);
+    $t_date = date("Y-m-d");
+    
+    // FIXED: Separate email and token in query
+    $query = select(
+        "SELECT * FROM `user_cred` WHERE `email`=? AND `token`=? AND `t_expire`=? LIMIT 1",
+        [$data['email'], $data['token'], $t_date],  // <- Correct parameter separation
+        'sss'
+    );
 
-        if(mysqli_num_rows($query)==1)
-        {
-            echo<<<showModal
-                <script>
-                    var myModal = document.getElementById('recoveryModal');
-
-                    myModal.querySelector("input[name='email']").value = '$data[email]';
-                    myModal.querySelector("input[name='token']").value = '$data[token]';
-
-                    var modal = bootstrap.Modal.getOrCreateInstance(myModal);
-                    modal.show();
-                </script>
-            showModal;
-        }
-        else
-        {
-            alert("error","Invalid or Expired Link!");
-        }
+    if(mysqli_num_rows($query) == 1) {
+        echo<<<showModal
+            <script>
+                // Wait for DOM and Bootstrap to be ready
+                document.addEventListener('DOMContentLoaded', function() {
+                    const myModal = document.getElementById('recoveryModal');
+                    
+                    if(myModal) {
+                        // Set hidden field values
+                        myModal.querySelector("input[name='email']").value = '$data[email]';
+                        myModal.querySelector("input[name='token']").value = '$data[token]';
+                        
+                        // Initialize modal properly
+                        const modal = new bootstrap.Modal(myModal);
+                        modal.show();
+                    } else {
+                        console.error('Recovery modal not found!');
+                    }
+                });
+            </script>
+        showModal;
+    } else {
+        echo "<script>alert('error', 'Invalid or Expired Link!');</script>";
     }
+}
 
     ?>
 

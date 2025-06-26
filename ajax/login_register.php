@@ -28,7 +28,7 @@ function send_mail($uemail,$token,$type)
         "text/html", 
         " 
                Click the link to $content: <br>
-               <a href='".SITE_URL."$page?$type&email=$uemail&token=$token"."'>
+               <a href='".SITE_URL."/$page?$type&email=$uemail&token=$token"."'>
                  Click me
                 </a>
                "
@@ -179,15 +179,15 @@ if(isset($_POST['forgot_pass'])){
     }
 }
 
-if(isset($_POST['forgot_pass'])){
+if(isset($_POST['recover_user'])){
     $data = filteration($_POST);
 
     $enc_pass = password_hash($data['pass'], PASSWORD_BCRYPT);
 
-    $query = "UPDATE `user_cred` SET `password` = ?, `token` = ?, `t_expire` = ? WHERE `email` = ? AND `token` = ?";
-    $values = [$enc_pass, null, null, $data['email']. $data['token']];
+    $query = "UPDATE `user_cred` SET `password`=?, `token`=NULL, `t_expire`=NULL WHERE `email`=? AND `token`=?";
+    $values = [$enc_pass, $data['email'], $data['token']];
 
-    if (update($query, $values, 'sssss')) {
+    if (update($query, $values, 'sss')) {
         echo 1;
     } else {
         echo 'failed';
