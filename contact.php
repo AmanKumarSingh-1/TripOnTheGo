@@ -14,7 +14,11 @@
     <div class="my-5 px-4">
         <h2 class="fw-bold h-font text-center">CONTACT US</h2>
         <div class="h-line bg-dark"></div>
-        <p class="text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quae, odit possimus incidunt harum facilis libero vel voluptates voluptate labore nemo esse obcaecati error magni ipsum porro aliquid distinctio id?
+        <p class="text-center mt-3">Whether you have questions about your booking, need help planning your stay, or just want to learn more about our accommodations and services, we're here to help!</p>
+        <p class="text-center mt-3">
+            Customer Support Hours <br>
+            Monday – Friday: 9:00 AM – 6:00 PM <br>
+            Saturday – Sunday: 10:00 AM – 4:00 PM (Limited Support) <br>
         </p>
     </div>
 

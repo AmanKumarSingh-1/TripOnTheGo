@@ -69,7 +69,7 @@
     <div class="container-fluid" id="main-content">
         <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden">
-                <h3 class="mb-4">USER QUERIES</h3>
+                <h3 class="mb-4 text-light">USER QUERIES</h3>
 
                 <div class="card border-0 shadow mb-4">
                     <div class="card-body">
@@ -98,7 +98,7 @@
 
                                 while($row = mysqli_fetch_assoc($data))
                                 {
-                                    $date =date('d-m-Y',strtotime($row['date']));
+                                    $date = date('d-m-Y',strtotime($row['datentime']));
                                     $seen='';
                                     if($row['seen']!=1){
                                         $seen = "<a href='?seen=$row[sr_no]' class='btn btn-sm rounded-pill btn-primary'>Mark as Read</a><br>";

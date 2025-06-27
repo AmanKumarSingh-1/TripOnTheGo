@@ -23,17 +23,24 @@
     <div class="my-5 px-4">
         <h2 class="fw-bold h-font text-center">ABOUT US</h2>
         <div class="h-line bg-dark"></div>
-        <p class="text-center mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quae, odit possimus incidunt harum facilis libero vel voluptates voluptate labore nemo esse obcaecati error magni ipsum porro aliquid distinctio id?</p>
+        <p class="text-center mt-3">At TripOnTheGo, we believe travel should be seamless, memorable, and tailored to your comfort. Founded with a passion for hospitality and discovery, our platform is dedicated to helping travelers find the perfect place to stay—whether it's a luxury resort, a charming boutique hotel, or a cozy vacation rental.
+            Our mission is to make every trip easier by connecting guests to trusted accommodations around the globe. With user-friendly booking tools, verified reviews, and 24/7 support, TripOnTheGo is your reliable partner for every getaway, business trip, or family vacation.
+        </p>
     </div>
 
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
-                <h3 class="mb-3">Lorem ipsum dolor sit.</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur illum similique magnam repudiandae deserunt ad at. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit exercitationem magnam repellendus. Numquam nisi quis ipsam, ab expedita fugit nostrum officiis obcaecati, distinctio exercitationem amet eius cumque corporis veritatis, officia possimus? Cupiditate itaque, repellat accusamus dolore quae fuga deleniti eligendi vel, nisi veritatis dolorum. Nostrum quae voluptates officiis? Culpa, aut.</p>
+                <h3 class="mb-3">Why Choose TripOnTheGo?</h3>
+                <p>
+                    ✔️ Wide range of hand-picked properties <br>
+                    ✔️ Transparent pricing with no hidden fees <br>
+                    ✔️ Easy booking and instant confirmations <br>
+                    ✔️ Friendly support team available around the clock
+                </p>
             </div>
             <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
-                <img src="images/about/about.jpg" class="w-100">
+                <img src="images/about/about.png" class="w-100 rounded mg-fluid shadow-sm mx-auto d-block">
             </div>
         </div>
     </div>

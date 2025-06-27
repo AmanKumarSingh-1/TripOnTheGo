@@ -50,7 +50,7 @@ adminLogin();
             <div class="col-lg-10 ms-auto p-4 overflow-hidden">
 
                 <div class="d-flex align-items-center justify-content-between mb-4">
-                    <h3>DASHBOARD</h3>
+                    <h3 class=" text-light">DASHBOARD</h3>
                     <?php
                         if($is_shutdown['shutdown']){
                             echo<<<data
@@ -96,7 +96,7 @@ adminLogin();
                 <!-- BOOKING ANALYTICS -->
 
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h5>Booking Analytics</h5>
+                    <h5 class=" text-light">BOOKING ANALYTICS</h5>
                     <select class="form-select shadow-none bg-light w-auto" onchange="booking_analytics(this.value)">
                         <option value="1">Past 30 Days</option>
                         <option value="2">Past 90 Days</option>
@@ -135,7 +135,7 @@ adminLogin();
                 <!-- User, Queries, Reviews Analytics-->
 
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h5>User, Queries, Reviews Analytics</h5>
+                    <h5 class=" text-light">USERS, QUERIES AND REVIEWS ANALYTICS</h5>
                     <select class="form-select shadow-none bg-light w-auto" onchange="user_analytics(this.value)">
                         <option value="1">Past 30 Days</option>
                         <option value="2">Past 90 Days</option>
@@ -169,7 +169,7 @@ adminLogin();
                 </div>
 
                 <!-- Users -->
-                <h5>Users</h5>
+                <h5 class=" text-light mb-4">USERS</h5>
                 <div class="row mb-3">
                     <div class="col-md-3 mb-4">
                         <div class="card text-center text-info p-3">

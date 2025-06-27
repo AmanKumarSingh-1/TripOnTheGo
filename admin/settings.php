@@ -9,7 +9,7 @@ adminLogin();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Dashboard</title>
+    <title>Admin Panel - Settings</title>
     <?php require("inc/links.php") ?>
 </head>
 
@@ -19,7 +19,7 @@ adminLogin();
     <div class="container-fluid" id="main-content">
         <div class="row">
             <div class="col-lg-10 ms-auto p-4 overflow-hidden">
-                <h3 class="mb-4">SETTINGS</h3>
+                <h3 class="mb-4 text-light">SETTINGS</h3>
                 <!-- General Settings section-->
 
                 <div class="card border-0 shadow mb-4">

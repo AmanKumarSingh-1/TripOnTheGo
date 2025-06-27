@@ -26,7 +26,7 @@
     </style>
 </head>
 <body class="bg-light">
-    <div class="login-form text-center rounded bg-white shadow overflow-hidden">
+    <div class="login-form text-center rounded bg-white shadow overflow-hidden bg-transparent">
         <form action="" method="POST">
             <h4 class="bg-dark text-white py-3">ADMIN LOGIN PANEL</h4>
             <div class="mb-3 p-4">
